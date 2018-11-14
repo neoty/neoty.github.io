@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F11%2F13%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[docker compose 최신 이미지 받고 앱 재생성]]></title>
+    <url>%2F2018%2F11%2F14%2FDocker-compose-%E1%84%8E%E1%85%AC%E1%84%89%E1%85%B5%E1%86%AB-%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5-%E1%84%87%E1%85%A1%E1%86%AE%E1%84%80%E1%85%A9-%E1%84%8B%E1%85%A2%E1%86%B8-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%2F</url>
+    <content type="text"><![CDATA[docker app 이 구동중이라도 상관 없습니다. 구동중인 root 디렉토리 이동1$ cd some-directory 최신 이미지 pull 받기1$ sudo docker-compose pull 최신 이미지로 서비스 재생성1$ sudo docker-compose up -d]]></content>
       <categories>
-        <category>NexT</category>
-        <category>Hexo</category>
+        <category>Docker</category>
       </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>docker-compose</tag>
+      </tags>
   </entry>
 </search>
