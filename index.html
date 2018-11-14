@@ -328,6 +328,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.seq.kr/2018/11/14/docker-redis-mariadb-start/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="seq.kr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="섥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/14/docker-redis-mariadb-start/" itemprop="url">
+                  Docker로 빠르게 mariadb, redis 서버 구동시키기
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-14 21:46:22" itemprop="dateCreated datePublished" datetime="2018-11-14T21:46:22+09:00">2018-11-14</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/14/docker-redis-mariadb-start/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/14/docker-redis-mariadb-start/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<blockquote>
+<p>중 괄호를 포함한 부분은 각자에 맡게 변경하시면 됩니다.<br>호스트 OS 에서 127.0.0.1로 접속하면 됩니다.</p>
+</blockquote>
+<h4 id="Mariadb5-버전대-사용-utf-8"><a href="#Mariadb5-버전대-사용-utf-8" class="headerlink" title="Mariadb5 버전대 사용(utf-8)"></a>Mariadb5 버전대 사용(utf-8)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name mariadb5 -p 127.0.0.1:3306:3306 \</span><br><span class="line">-v &#123;호스트에 위치할 데이타 디렉토리&#125;:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=&#123;root비밀번호&#125; \</span><br><span class="line">-d mariadb:5.5 \</span><br><span class="line">--character-set-server=utf8 \</span><br><span class="line">--collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<h4 id="redis3-2-버전대-사용"><a href="#redis3-2-버전대-사용" class="headerlink" title="redis3.2 버전대 사용"></a>redis3.2 버전대 사용</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name redis -p 127.0.0.1:6379:6379 -d redis:3.2</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.seq.kr/2018/11/14/docker-pull-image-deploy/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -527,7 +697,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">포스트</span>
                   </a>
                 </div>
@@ -552,7 +722,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -561,7 +731,7 @@
                     
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">태그</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -1190,7 +1360,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("docker compose 최신 이미지 받고 앱 재생성");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Docker로 빠르게 mariadb, redis 서버 구동시키기");titles.push("docker compose 최신 이미지 받고 앱 재생성");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

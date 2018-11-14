@@ -109,20 +109,20 @@
 
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="https://blog.seq.kr/categories/index.html">
+<meta property="og:title" content="All tags">
+<meta property="og:url" content="https://blog.seq.kr/tags/index.html">
 <meta property="og:site_name" content="섥">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-11-13T12:32:48.000Z">
+<meta property="og:updated_time" content="2018-11-14T12:51:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
+<meta name="twitter:title" content="All tags">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.seq.kr/categories/">
+  <link rel="canonical" href="https://blog.seq.kr/tags/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>All categories | 섥</title>
+  <title>All tags | 섥</title>
   
 
 
@@ -230,7 +230,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-tags menu-item-active">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>태그</a>
   </li>
@@ -238,7 +238,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br>카테고리</a>
   </li>
@@ -338,7 +338,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">All categories</h2>
+<h2 class="post-title" itemprop="name headline">All tags</h2>
 
 <div class="post-meta">
   
@@ -356,18 +356,22 @@
       <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
                 
                 
                   
                     
                   
                 
-                1개의 카테고리
+                  
+                    
+                  
+                
+                총 2개의 태그
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li></ul>
+            <div class="tag-cloud-tags">
+              <a href="/tags/docker/" style="font-size: 30px; color: #111">docker</a> <a href="/tags/docker-compose/" style="font-size: 12px; color: #ccc">docker-compose</a>
             </div>
           </div>
         
@@ -688,9 +692,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.seq.kr/categories/index.html';
-        this.page.identifier = 'categories/index.html';
-        this.page.title = 'All categories';
+        this.page.url = 'https://blog.seq.kr/tags/index.html';
+        this.page.identifier = 'tags/index.html';
+        this.page.title = 'All tags';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -1108,13 +1112,13 @@
       var articles = db.collection('/articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'All categories'.length > 0
+      var isPost = 'All tags'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'All categories'
+        var title = 'All tags'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

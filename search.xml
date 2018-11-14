@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker로 빠르게 mariadb, redis 서버 구동시키기]]></title>
+    <url>%2F2018%2F11%2F14%2Fdocker-redis-mariadb-start%2F</url>
+    <content type="text"><![CDATA[중 괄호를 포함한 부분은 각자에 맡게 변경하시면 됩니다.호스트 OS 에서 127.0.0.1로 접속하면 됩니다. Mariadb5 버전대 사용(utf-8)123456$ sudo docker run --name mariadb5 -p 127.0.0.1:3306:3306 \-v &#123;호스트에 위치할 데이타 디렉토리&#125;:/var/lib/mysql \-e MYSQL_ROOT_PASSWORD=&#123;root비밀번호&#125; \-d mariadb:5.5 \--character-set-server=utf8 \--collation-server=utf8_general_ci redis3.2 버전대 사용1$ sudo docker run --name redis -p 127.0.0.1:6379:6379 -d redis:3.2]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[docker compose 최신 이미지 받고 앱 재생성]]></title>
     <url>%2F2018%2F11%2F14%2Fdocker-pull-image-deploy%2F</url>
     <content type="text"><![CDATA[docker app 이 구동중이라도 상관 없습니다. 구동중인 root 디렉토리 이동1$ cd some-directory 최신 이미지 pull 받기1$ sudo docker-compose pull 최신 이미지로 서비스 재생성1$ sudo docker-compose up -d]]></content>
