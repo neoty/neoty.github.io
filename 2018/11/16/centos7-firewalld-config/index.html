@@ -108,21 +108,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="https://blog.seq.kr/categories/index.html">
+  <meta name="description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
+<meta name="keywords" content="linux,firewalld">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu docker compose 설치">
+<meta property="og:url" content="https://blog.seq.kr/2018/11/16/centos7-firewalld-config/index.html">
 <meta property="og:site_name" content="섥">
+<meta property="og:description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-11-13T12:32:48.000Z">
+<meta property="og:updated_time" content="2018-11-16T10:54:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
+<meta name="twitter:title" content="Ubuntu docker compose 설치">
+<meta name="twitter:description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.seq.kr/categories/">
+  <link rel="canonical" href="https://blog.seq.kr/2018/11/16/centos7-firewalld-config/">
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>All categories | 섥</title>
+  <title>Ubuntu docker compose 설치 | 섥</title>
   
 
 
@@ -238,7 +242,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br>카테고리</a>
   </li>
@@ -266,25 +270,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -333,60 +318,212 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.seq.kr/2018/11/16/centos7-firewalld-config/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="seq.kr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="섥">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">All categories</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                총 2개의 카테고리
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
+          <h2 class="post-title" itemprop="name headline">Ubuntu docker compose 설치
+              
+            
+          </h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-16 19:39:23 / Updated at: 19:54:21" itemprop="dateCreated datePublished" datetime="2018-11-16T19:39:23+09:00">2018-11-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/16/centos7-firewalld-config/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/16/centos7-firewalld-config/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <hr>
+<p>공식 메뉴얼 제공 사이트입니다.</p>
+<ul>
+<li><a href="http://www.firewalld.org/documentation/" target="_blank" rel="noopener">http://www.firewalld.org/documentation/</a></li>
+</ul>
+<p>Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터<br>개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!</p>
+<blockquote>
+<p>permanent 옵션이 붙으면 영구적으로 설정된다는 뜻입니다.</p>
+</blockquote>
+<h3 id="현재-활성화된-존과-인터페이스-보기"><a href="#현재-활성화된-존과-인터페이스-보기" class="headerlink" title="현재 활성화된 존과 인터페이스 보기"></a>현재 활성화된 존과 인터페이스 보기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --get-active-zones</span></span><br></pre></td></tr></table></figure>
+<h3 id="존-상태보기"><a href="#존-상태보기" class="headerlink" title="존 상태보기"></a>존 상태보기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-all</span></span><br></pre></td></tr></table></figure>
+<h3 id="이더넷에-정책-할당하기-eth0-번-이더넷에-internal-존-적용혹은-삭제-하는-방법"><a href="#이더넷에-정책-할당하기-eth0-번-이더넷에-internal-존-적용혹은-삭제-하는-방법" class="headerlink" title="이더넷에 정책 할당하기(eth0 번 이더넷에 internal 존 적용혹은 삭제 하는 방법)"></a>이더넷에 정책 할당하기(eth0 번 이더넷에 internal 존 적용혹은 삭제 하는 방법)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=internal --add-interface=eth0</span></span><br><span class="line"><span class="comment"># firewall-cmd --permanent --zone=internal --remove-interface=eth0</span></span><br></pre></td></tr></table></figure>
+<h3 id="현재-존에-개방된-포트"><a href="#현재-존에-개방된-포트" class="headerlink" title="현재 존에 개방된 포트"></a>현재 존에 개방된 포트</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-ports</span></span><br></pre></td></tr></table></figure>
+<h3 id="현재-존에-개방된-서비스-well-know-에-해당"><a href="#현재-존에-개방된-서비스-well-know-에-해당" class="headerlink" title="현재 존에 개방된 서비스(well-know 에 해당)"></a>현재 존에 개방된 서비스(well-know 에 해당)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-services</span></span><br></pre></td></tr></table></figure>
+<h3 id="현재-존에-개방된-아이피"><a href="#현재-존에-개방된-아이피" class="headerlink" title="현재 존에 개방된 아이피"></a>현재 존에 개방된 아이피</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-sources</span></span><br></pre></td></tr></table></figure>
+<h3 id="존에-포트추가하기"><a href="#존에-포트추가하기" class="headerlink" title="존에 포트추가하기"></a>존에 포트추가하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=&#123;존명&#125; --add-port=&#123;포트번호&#125;/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="존에-포트-범위로-추가하기-0-65535-번-추가"><a href="#존에-포트-범위로-추가하기-0-65535-번-추가" class="headerlink" title="존에 포트 범위로 추가하기(0~65535 번 추가)"></a>존에 포트 범위로 추가하기(0~65535 번 추가)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=&#123;존명&#125; --add-port=0-65535/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="존에-추가된-포트-삭제하기"><a href="#존에-추가된-포트-삭제하기" class="headerlink" title="존에 추가된 포트 삭제하기"></a>존에 추가된 포트 삭제하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --remove-port=&#123;포트번호&#125;/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="firewalld-리로드"><a href="#firewalld-리로드" class="headerlink" title="firewalld 리로드"></a>firewalld 리로드</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br></pre></td></tr></table></figure>
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/firewalld/" rel="tag"># firewalld</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/16/dockerlize-nodejs/" rel="next" title="nodejs dockerlize - package.json 을 앞에 놓는이유">
+                <i class="fa fa-chevron-left"></i> nodejs dockerlize - package.json 을 앞에 놓는이유
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/16/chmod-permisstion-table/" rel="prev" title="chmod 퍼미션">
+                chmod 퍼미션 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -428,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            목차
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            흝어보기
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -526,6 +672,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#현재-활성화된-존과-인터페이스-보기"><span class="nav-number">1.</span> <span class="nav-text">현재 활성화된 존과 인터페이스 보기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#존-상태보기"><span class="nav-number">2.</span> <span class="nav-text">존 상태보기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#이더넷에-정책-할당하기-eth0-번-이더넷에-internal-존-적용혹은-삭제-하는-방법"><span class="nav-number">3.</span> <span class="nav-text">이더넷에 정책 할당하기(eth0 번 이더넷에 internal 존 적용혹은 삭제 하는 방법)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#현재-존에-개방된-포트"><span class="nav-number">4.</span> <span class="nav-text">현재 존에 개방된 포트</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#현재-존에-개방된-서비스-well-know-에-해당"><span class="nav-number">5.</span> <span class="nav-text">현재 존에 개방된 서비스(well-know 에 해당)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#현재-존에-개방된-아이피"><span class="nav-number">6.</span> <span class="nav-text">현재 존에 개방된 아이피</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#존에-포트추가하기"><span class="nav-number">7.</span> <span class="nav-text">존에 포트추가하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#존에-포트-범위로-추가하기-0-65535-번-추가"><span class="nav-number">8.</span> <span class="nav-text">존에 포트 범위로 추가하기(0~65535 번 추가)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#존에-추가된-포트-삭제하기"><span class="nav-number">9.</span> <span class="nav-text">존에 추가된 포트 삭제하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firewalld-리로드"><span class="nav-number">10.</span> <span class="nav-text">firewalld 리로드</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -689,9 +851,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.seq.kr/categories/index.html';
-        this.page.identifier = 'categories/index.html';
-        this.page.title = 'All categories';
+        this.page.url = 'https://blog.seq.kr/2018/11/16/centos7-firewalld-config/';
+        this.page.identifier = '2018/11/16/centos7-firewalld-config/';
+        this.page.title = 'Ubuntu docker compose 설치';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -1109,13 +1271,13 @@
       var articles = db.collection('/articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'All categories'.length > 0
+      var isPost = 'Ubuntu docker compose 설치'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'All categories'
+        var title = 'Ubuntu docker compose 설치'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
