@@ -84,17 +84,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu docker compose 설치]]></title>
-    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
-    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu 16.04 swap 메모리 추가하기]]></title>
     <url>%2F2018%2F09%2F02%2Flinux%2Fubuntu16.04-swap-config%2F</url>
     <content type="text"><![CDATA[설정 변경 전물리적 메모리의 * 2 배 정도로 추가하면 무난하다.상황에 따라 메모리가 많다면 1~1.5 배 고려 ( 구동되는 서비스들의 상황에 맞게 줄이 거나 늘리거나 ) (참고 문서)swappiness 설정도 필요하면 하자.2GB의 swap 메모리 추가1234$ sudo fallocate -l 2G /swapfile$ sudo chmod 600 /swapfile$ sudo mkswap /swapfile$ sudo swapon /swapfileswap 할당 확인1$ free -m재 부팅시에도 자동 할당기존 파일 백업1$ sudo cp /etc/fstab /etc/fstab.bak설정 추가1$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab]]></content>
@@ -104,6 +93,17 @@
       <tags>
         <tag>linux</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu docker compose 설치]]></title>
+    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
+    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
