@@ -37,7 +37,14 @@
 
     <url>
         <loc>https://blog.seq.kr/categories/Open-source/</loc>
-        <lastmod>2018-11-16T14:52:02.000Z</lastmod>
+        <lastmod>2018-11-16T14:59:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/categories/Nodejs/</loc>
+        <lastmod>2018-11-16T15:07:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

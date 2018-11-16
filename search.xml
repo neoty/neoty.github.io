@@ -95,6 +95,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Ubuntu docker compose 설치]]></title>
+    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
+    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu 16.04 swap 메모리 추가하기]]></title>
     <url>%2F2018%2F09%2F02%2Flinux%2Fubuntu16.04-swap-config%2F</url>
     <content type="text"><![CDATA[설정 변경 전물리적 메모리의 * 2 배 정도로 추가하면 무난하다.상황에 따라 메모리가 많다면 1~1.5 배 고려 ( 구동되는 서비스들의 상황에 맞게 줄이 거나 늘리거나 ) (참고 문서)swappiness 설정도 필요하면 하자.2GB의 swap 메모리 추가1234$ sudo fallocate -l 2G /swapfile$ sudo chmod 600 /swapfile$ sudo mkswap /swapfile$ sudo swapon /swapfileswap 할당 확인1$ free -m재 부팅시에도 자동 할당기존 파일 백업1$ sudo cp /etc/fstab /etc/fstab.bak설정 추가1$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab]]></content>
@@ -107,14 +118,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu docker compose 설치]]></title>
-    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
-    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+    <title><![CDATA[NVM 으로 node 버전 쉽게 관리하기]]></title>
+    <url>%2F2018%2F05%2F19%2Fnodejs%2Fnode-version-manager-usage%2F</url>
+    <content type="text"><![CDATA[최신 설치법은 아래 링크 참고해주세요.Github nvm 공식 repository아래 글은 우분투 16.04 기준입니다.nvm 설치nvm 설치123456$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash$ cd ~/$ view .bashrc하단에 아래와 같은 profile이 추가 되었는지 확인 후 (우분투 기준입니다.) 없다면 수동 추가바랍니다.보통은 자동 추가가 됩니다.자동 스크립트 추가 확인.bashrc 나 .bash_profile 하단 내용123export NVM_DIR="$HOME/.nvm"[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh" # This loads nvm[ -s "$NVM_DIR/bash_completion" ] &amp;&amp; \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion설치 path 업데이트설치 후 바로 사용할 경우 profile 을 읽어주어야 합니다.(재 로그인 시 불 필요)1$ source ~/.bashrc 또는 source ~/.bash_profile설치 확인1$ nvm --version최신 LTS node 설치설치 가능한 LTS 버전 확인12345678$ nvm ls-remote --lts v4.2.0 (LTS: Argon) v4.2.1 (LTS: Argon) v4.2.2 (LTS: Argon) ... 중략 v8.11.0 (LTS: Carbon) v8.11.1 (LTS: Carbon) v8.11.2 (Latest LTS: Carbon)선택한 LTS node 설치하기설치 버전은 자신에 맞게 변경하시면됩니다. 여기선 v8.11.212345678$ nvm install v8.11.2Downloading and installing node v8.11.2...Downloading https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.xz...######################################################################## 100.0%Computing checksum with sha256sumChecksums matched!Now using node v8.11.2 (npm v5.6.0)Creating default alias: default -&gt; v8.11.2설치 확인12345678910111213$ nvm list-&gt; v8.11.2default -&gt; v8.11.2node -&gt; stable (-&gt; v8.11.2) (default)stable -&gt; 8.11 (-&gt; v8.11.2) (default)iojs -&gt; N/A (default)lts/* -&gt; lts/carbon (-&gt; v8.11.2)lts/argon -&gt; v4.9.1 (-&gt; N/A)lts/boron -&gt; v6.14.2 (-&gt; N/A)lts/carbon -&gt; v8.11.2$ node -vv8.11.2]]></content>
       <categories>
-        <category>Docker</category>
+        <category>Nodejs</category>
       </categories>
       <tags>
-        <tag>docker</tag>
+        <tag>nodejs</tag>
+        <tag>nvm</tag>
       </tags>
   </entry>
   <entry>
