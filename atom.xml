@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>섥</title>
+  
+  <subtitle>Life on earth</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.seq.kr/"/>
+  <updated>2018-11-16T13:51:02.000Z</updated>
+  <id>https://blog.seq.kr/</id>
+  
+  <author>
+    <name>seq.kr</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>사용빈도 높은 상태 코드</title>
+    <link href="https://blog.seq.kr/2018/11/16/http/restful-status-code/"/>
+    <id>https://blog.seq.kr/2018/11/16/http/restful-status-code/</id>
+    <published>2018-11-16T13:38:12.000Z</published>
+    <updated>2018-11-16T13:51:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p>304 는 넣지 않았습니다. <a href="http://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener">참고링크</a></p></blockquote><h4 id="코드-상태별-설명"><a href="#코드-상태별-설명" class="headerlink" title="코드 상태별 설명"></a>코드 상태별 설명</h4><h5 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h5><ul><li>성공 상태를 나타내는 가장 일반적인 코드</li></ul><h5 id="201-Created"><a href="#201-Created" class="headerlink" title="201 Created"></a>201 Created</h5><ul><li>POST 혹은 PUT 요청이 성공하였을 때</li></ul><h5 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h5><ul><li>반환값이 없는 요청이 성공했을 때 (반환시 데이터 본문이 없어야 하므로 delete 시 사용)</li></ul><h5 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h5><ul><li>누락된 데이터, 잘못된 데이터(유효성)의 접근 시</li></ul><h5 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h5><ul><li>미 인증 혹은 인증 만료로 인한 에러 코드</li></ul><h5 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h5><ul><li>유효(권한 등)하지 않는 페이지의 접근 혹은 액션</li></ul><h5 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h5><ul><li>요청한 리소스가 없거나 보안상 401, 403 을 대체</li></ul><h5 id="409-Conflict"><a href="#409-Conflict" class="headerlink" title="409 Conflict"></a>409 Conflict</h5><ul><li>요청의 병합(동시작업)으로 인해 요청을 수행할 수 없을시</li></ul><h5 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h5><ul><li>서버측의 에러로 인한 일반적인 반환 코드(보안상의 이유로 사용자에게 에러 코드는 간략화 한다.)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;blockquote&gt;&lt;p&gt;304 는 넣지 않았습니다. &lt;a href=&quot;http://www.restapitutorial.com/httpstatuscodes.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;참고링크&lt;/a&gt;&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="Http" scheme="https://blog.seq.kr/categories/Http/"/>
+    
+    
+      <category term="http" scheme="https://blog.seq.kr/tags/http/"/>
+    
+      <category term="status" scheme="https://blog.seq.kr/tags/status/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http 응답코드 로드맵</title>
+    <link href="https://blog.seq.kr/2018/11/16/http/http-response-code-roadmap/"/>
+    <id>https://blog.seq.kr/2018/11/16/http/http-response-code-roadmap/</id>
+    <published>2018-11-16T13:20:56.000Z</published>
+    <updated>2018-11-16T13:37:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p><img src="/assets/http/http-response-code-roadmap.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;p&gt;&lt;img src=&quot;/assets/http/http-response-code-roadmap.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="Http" scheme="https://blog.seq.kr/categories/Http/"/>
+    
+    
+      <category term="http" scheme="https://blog.seq.kr/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs dockerlize - package.json 을 앞에 놓는이유</title>
+    <link href="https://blog.seq.kr/2018/11/16/docker/dockerlize-nodejs/"/>
+    <id>https://blog.seq.kr/2018/11/16/docker/dockerlize-nodejs/</id>
+    <published>2018-11-16T07:37:36.000Z</published>
+    <updated>2018-11-16T12:57:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h4 id="why"><a href="#why" class="headerlink" title="why?"></a>why?</h4><p>이유가 여러가지만 nodejs 앱을 dockerlize할 때 보통 package.json을 소스 복사전에 따로 복사해서 의존성을 install 한다.</p><blockquote><p><a href="https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/" target="_blank" rel="noopener">https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/</a><br><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener">https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</a></p></blockquote><p>그냥 통으로 현재 디렉토리(어플리케이션 소스등을) 복사해서 install 해도 될텐데 왜 그럴까?</p><ol><li>Dockerfile 에 기술되어있는 순서대로 각 명령별로 레이어를 생성한다. (해당 레이어 생성시 레이어작업 결과물은 최종 이미지의 용량과 관계가 있다.)</li><li>일반적으로 package.json 을 활용하여 Dockerfile 안에서 의존성을 설치하게 된다.</li><li>그런데 만약 변경 소지가 많은 앱 소스 COPY 와 동일 선상혹은 그 이후에 의존성 설치 작업을 하게 되면 매번 소스가 변경 될때 마다 의존성 설치도 계속 하게 된다. (docker 이미지 생성시 레이어 기법을 이용한다.)</li><li>고로 변경 소지가 낮은 package.json 같은 경우 앱 소스 COPY 보다 상위에 두어 docker 의 레이어 캐싱을 활용하게 된다.</li></ol><p>이는 모든 어플리케이션 dockerlize 시에 고려되어야 하는 사항이고 docker image 생성 명령어 기술 시 <strong>최대한 수정 빈도가 낮은것을 수정빈도가 높은것보다 앞에 두는 형식</strong>으로 dockerfile 을 작성해야한다.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM node:alpine</span><br><span class="line"></span><br><span class="line">WORKDIR /usr/app</span><br><span class="line"></span><br><span class="line">COPY package.json .</span><br><span class="line">RUN npm install --quiet</span><br><span class="line"></span><br><span class="line">COPY . .</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;h4 id=&quot;why&quot;&gt;&lt;a href=&quot;#why&quot; class=&quot;headerlink&quot; title=&quot;why?&quot;&gt;&lt;/a&gt;why?&lt;/h4&gt;&lt;p&gt;이유가 여러가지만 nodejs 앱을 dockerlize할 때 보통 package.json을 소스 복사전에 따
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="https://blog.seq.kr/tags/docker/"/>
+    
+      <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux timezone 변경하기</title>
+    <link href="https://blog.seq.kr/2018/11/16/linux/timezone-change/"/>
+    <id>https://blog.seq.kr/2018/11/16/linux/timezone-change/</id>
+    <published>2018-11-15T15:00:00.000Z</published>
+    <updated>2018-11-16T13:00:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>보통 파일을 복사하는 형식으로 timezone을 변경하고 있는데 찾아보니 명령어로 간편하게 변경하는 방법이 있습니다.<br>아래방법은 재부팅되어도 유효한 timezone변경입니다.<br>ubuntu &lt;= 14.04 에서 테스트되었습니다.</p><blockquote><p><a href="https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/7/html-single/system_administrators_guide/index#sect-Configuring_the_Date_and_Time-timedatectl" target="_blank" rel="noopener">redhat 문서</a></p></blockquote><h4 id="현재-timezone-정보-확인"><a href="#현재-timezone-정보-확인" class="headerlink" title="현재 timezone 정보 확인"></a>현재 timezone 정보 확인</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl status</span></span><br></pre></td></tr></table></figure><h4 id="사용-가능한-timezone-확인"><a href="#사용-가능한-timezone-확인" class="headerlink" title="사용 가능한 timezone 확인"></a>사용 가능한 timezone 확인</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl list-timezones</span></span><br></pre></td></tr></table></figure><h4 id="KST로-timezone-변경"><a href="#KST로-timezone-변경" class="headerlink" title="KST로 timezone 변경"></a>KST로 timezone 변경</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl set-timezone Asia/Seoul</span></span><br></pre></td></tr></table></figure><h4 id="UTC-timezone-으로-변경"><a href="#UTC-timezone-으로-변경" class="headerlink" title="UTC timezone 으로 변경"></a>UTC timezone 으로 변경</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># timedatectl set-timezone UTC</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;p&gt;보통 파일을 복사하는 형식으로 timezone을 변경하고 있는데 찾아보니 명령어로 간편하게 변경하는 방법이 있습니다.&lt;br&gt;아래방법은 재부팅되어도 유효한 timezone변경입니다.&lt;br&gt;ubuntu &amp;lt;= 14.04 에서 테스트되었습니
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="timezone" scheme="https://blog.seq.kr/tags/timezone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker compose 최신 이미지 받고 앱 재생성</title>
+    <link href="https://blog.seq.kr/2018/11/10/docker/pull-image-deploy/"/>
+    <id>https://blog.seq.kr/2018/11/10/docker/pull-image-deploy/</id>
+    <published>2018-11-09T15:00:00.000Z</published>
+    <updated>2018-11-16T12:55:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p>docker app 이 구동중이라도 상관 없습니다.</p></blockquote><h4 id="구동중인-root-디렉토리-이동"><a href="#구동중인-root-디렉토리-이동" class="headerlink" title="구동중인 root 디렉토리 이동"></a>구동중인 root 디렉토리 이동</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> some-directory</span><br></pre></td></tr></table></figure><h4 id="최신-이미지-pull-받기"><a href="#최신-이미지-pull-받기" class="headerlink" title="최신 이미지 pull 받기"></a>최신 이미지 pull 받기</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker-compose pull</span><br></pre></td></tr></table></figure><h4 id="최신-이미지로-서비스-재-생성"><a href="#최신-이미지로-서비스-재-생성" class="headerlink" title="최신 이미지로 서비스 재 생성"></a>최신 이미지로 서비스 재 생성</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker-compose up -d</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;blockquote&gt;&lt;p&gt;docker app 이 구동중이라도 상관 없습니다.&lt;/p&gt;&lt;/blockquote&gt;&lt;h4 id=&quot;구동중인-root-디렉토리-이동&quot;&gt;&lt;a href=&quot;#구동중인-root-디렉토리-이동&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="https://blog.seq.kr/tags/docker/"/>
+    
+      <category term="docker-compose" scheme="https://blog.seq.kr/tags/docker-compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chmod 퍼미션</title>
+    <link href="https://blog.seq.kr/2018/09/17/linux/chmod-permission-table/"/>
+    <id>https://blog.seq.kr/2018/09/17/linux/chmod-permission-table/</id>
+    <published>2018-09-16T15:00:00.000Z</published>
+    <updated>2018-11-16T12:52:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p><a href="https://en.wikipedia.org/wiki/Chmod" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Chmod</a></p></blockquote><table><thead><tr><th>#</th><th>Permisstion</th><th>rwx</th><th>Binary</th></tr></thead><tbody><tr><td>7</td><td>read, write and execute</td><td>rwx</td><td>111</td></tr><tr><td>6</td><td>read and write</td><td>rw-</td><td>110</td></tr><tr><td>5</td><td>read and execute</td><td>r-x</td><td>101</td></tr><tr><td>4</td><td>read only</td><td>r–</td><td>100</td></tr><tr><td>3</td><td>write and execute</td><td>-wx</td><td>011</td></tr><tr><td>2</td><td>write only</td><td>-w-</td><td>010</td></tr><tr><td>1</td><td>execute only</td><td>–x</td><td>001</td></tr><tr><td>0</td><td>none</td><td>—</td><td>000</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;blockquote&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Chmod&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://en.wikipedia.org/wiki/Chmod&lt;/a&gt;&lt;/p&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos7 이상(Firewalld) 방화벽 설정 방법</title>
+    <link href="https://blog.seq.kr/2018/09/04/linux/centos7-firewalld-config/"/>
+    <id>https://blog.seq.kr/2018/09/04/linux/centos7-firewalld-config/</id>
+    <published>2018-09-03T15:00:00.000Z</published>
+    <updated>2018-11-16T12:56:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p><a href="http://www.firewalld.org/documentation/" target="_blank" rel="noopener">공식 메뉴얼 제공 사이트입니다.</a></p><p>Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터<br>개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!</p><blockquote><p>permanent 옵션이 붙으면 영구적으로 설정된다는 뜻입니다.</p></blockquote><h4 id="현재-활성화된-존과-인터페이스-보기"><a href="#현재-활성화된-존과-인터페이스-보기" class="headerlink" title="현재 활성화된 존과 인터페이스 보기"></a>현재 활성화된 존과 인터페이스 보기</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --get-active-zones</span></span><br></pre></td></tr></table></figure><h4 id="존-상태보기"><a href="#존-상태보기" class="headerlink" title="존 상태보기"></a>존 상태보기</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-all</span></span><br></pre></td></tr></table></figure><h4 id="이더넷에-정책-할당하기-eth0-번-이더넷에-internal-존-적용혹은-삭제-하는-방법"><a href="#이더넷에-정책-할당하기-eth0-번-이더넷에-internal-존-적용혹은-삭제-하는-방법" class="headerlink" title="이더넷에 정책 할당하기(eth0 번 이더넷에 internal 존 적용혹은 삭제 하는 방법)"></a>이더넷에 정책 할당하기(eth0 번 이더넷에 internal 존 적용혹은 삭제 하는 방법)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=internal --add-interface=eth0</span></span><br><span class="line"><span class="comment"># firewall-cmd --permanent --zone=internal --remove-interface=eth0</span></span><br></pre></td></tr></table></figure><h4 id="현재-존에-개방된-포트"><a href="#현재-존에-개방된-포트" class="headerlink" title="현재 존에 개방된 포트"></a>현재 존에 개방된 포트</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-ports</span></span><br></pre></td></tr></table></figure><h4 id="현재-존에-개방된-서비스-well-know-에-해당"><a href="#현재-존에-개방된-서비스-well-know-에-해당" class="headerlink" title="현재 존에 개방된 서비스(well-know 에 해당)"></a>현재 존에 개방된 서비스(well-know 에 해당)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-services</span></span><br></pre></td></tr></table></figure><h4 id="현재-존에-개방된-아이피"><a href="#현재-존에-개방된-아이피" class="headerlink" title="현재 존에 개방된 아이피"></a>현재 존에 개방된 아이피</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --list-sources</span></span><br></pre></td></tr></table></figure><h4 id="존에-포트추가하기"><a href="#존에-포트추가하기" class="headerlink" title="존에 포트추가하기"></a>존에 포트추가하기</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=&#123;존명&#125; --add-port=&#123;포트번호&#125;/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure><h4 id="존에-포트-범위로-추가하기-0-65535-번-추가"><a href="#존에-포트-범위로-추가하기-0-65535-번-추가" class="headerlink" title="존에 포트 범위로 추가하기(0~65535 번 추가)"></a>존에 포트 범위로 추가하기(0~65535 번 추가)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=&#123;존명&#125; --add-port=0-65535/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure><h4 id="존에-추가된-포트-삭제하기"><a href="#존에-추가된-포트-삭제하기" class="headerlink" title="존에 추가된 포트 삭제하기"></a>존에 추가된 포트 삭제하기</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=&#123;존명&#125; --remove-port=&#123;포트번호&#125;/&#123;tcp 혹은 udp&#125;</span></span><br></pre></td></tr></table></figure><h4 id="firewalld-리로드"><a href="#firewalld-리로드" class="headerlink" title="firewalld 리로드"></a>firewalld 리로드</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;p&gt;&lt;a href=&quot;http://www.firewalld.org/documentation/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;공식 메뉴얼 제공 사이트입니다.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Centos 7 으로 넘어오면서 기본 방화벽
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="firewalld" scheme="https://blog.seq.kr/tags/firewalld/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu docker compose 설치</title>
+    <link href="https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/"/>
+    <id>https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/</id>
+    <published>2018-09-01T15:00:00.000Z</published>
+    <updated>2018-11-16T12:56:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>아래 방법은 공식사이트에서 가져온 내용입니다.<br>개인적으로 root 설치하기를 권장합니다.</p><blockquote><p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank" rel="noopener">docker install link</a><br><a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">docker-compose install link</a></p></blockquote><h4 id="docker-설치"><a href="#docker-설치" class="headerlink" title="docker 설치"></a>docker 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line"> </span><br><span class="line">$ sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br><span class="line"> </span><br><span class="line">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"> </span><br><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br><span class="line"> </span><br><span class="line">$ sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br><span class="line"> </span><br><span class="line">$ sudo apt-get update</span><br><span class="line"> </span><br><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure><h4 id="docker-설치-테스트"><a href="#docker-설치-테스트" class="headerlink" title="docker 설치 테스트"></a>docker 설치 테스트</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br><span class="line"></span><br><span class="line">$ sudo docker ps -a</span><br><span class="line">실행 확인</span><br><span class="line"></span><br><span class="line">$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;</span><br><span class="line"></span><br><span class="line">$ sudo docker rmi hello-world</span><br></pre></td></tr></table></figure><h4 id="docker-compose-설치"><a href="#docker-compose-설치" class="headerlink" title="docker compose 설치"></a>docker compose 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line"></span><br><span class="line">$ sudo chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line"></span><br><span class="line">$ sudo docker-compose --version</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;p&gt;아래 방법은 공식사이트에서 가져온 내용입니다.&lt;br&gt;개인적으로 root 설치하기를 권장합니다.&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubunt
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="https://blog.seq.kr/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu 16.04 swap 메모리 추가하기</title>
+    <link href="https://blog.seq.kr/2018/09/02/linux/ubuntu16.04-swap-config/"/>
+    <id>https://blog.seq.kr/2018/09/02/linux/ubuntu16.04-swap-config/</id>
+    <published>2018-09-01T15:00:00.000Z</published>
+    <updated>2018-11-16T13:17:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h4 id="설정-변경-전"><a href="#설정-변경-전" class="headerlink" title="설정 변경 전"></a>설정 변경 전</h4><ul><li>물리적 메모리의 * 2 배 정도로 추가하면 무난하다.<ul><li>상황에 따라 메모리가 많다면 1~1.5 배 고려 ( 구동되는 서비스들의 상황에 맞게 줄이 거나 늘리거나 ) <a href="https://www.redhat.com/en/blog/do-we-really-need-swap-modern-systems" target="_blank" rel="noopener">(<strong>참고 문서</strong>)</a></li><li>swappiness 설정도 필요하면 하자.</li></ul></li></ul><h4 id="2GB의-swap-메모리-추가"><a href="#2GB의-swap-메모리-추가" class="headerlink" title="2GB의 swap 메모리 추가"></a>2GB의 swap 메모리 추가</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo fallocate -l 2G /swapfile</span><br><span class="line">$ sudo chmod 600 /swapfile</span><br><span class="line">$ sudo mkswap /swapfile</span><br><span class="line">$ sudo swapon /swapfile</span><br></pre></td></tr></table></figure><h4 id="swap-할당-확인"><a href="#swap-할당-확인" class="headerlink" title="swap 할당 확인"></a>swap 할당 확인</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ free -m</span><br></pre></td></tr></table></figure><p><hr></p><h4 id="재-부팅시에도-자동-할당"><a href="#재-부팅시에도-자동-할당" class="headerlink" title="재 부팅시에도 자동 할당"></a>재 부팅시에도 자동 할당</h4><h5 id="기존-파일-백업"><a href="#기존-파일-백업" class="headerlink" title="기존 파일 백업"></a>기존 파일 백업</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp /etc/fstab /etc/fstab.bak</span><br></pre></td></tr></table></figure><h5 id="설정-추가"><a href="#설정-추가" class="headerlink" title="설정 추가"></a>설정 추가</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'/swapfile none swap sw 0 0'</span> | sudo tee -a /etc/fstab</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;h4 id=&quot;설정-변경-전&quot;&gt;&lt;a href=&quot;#설정-변경-전&quot; class=&quot;headerlink&quot; title=&quot;설정 변경 전&quot;&gt;&lt;/a&gt;설정 변경 전&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;물리적 메모리의 * 2 배 정도로 추가하면 무난하다.&lt;ul&gt;&lt;li&gt;상황에 
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://blog.seq.kr/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker로 빠르게 mariadb, redis 서버 구동시키기</title>
+    <link href="https://blog.seq.kr/2018/05/07/docker/docker-redis-mariadb-start/"/>
+    <id>https://blog.seq.kr/2018/05/07/docker/docker-redis-mariadb-start/</id>
+    <published>2018-05-06T15:00:00.000Z</published>
+    <updated>2018-11-16T12:56:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p>중 괄호를 포함한 부분은 각자에 맡게 변경하시면 됩니다.<br>호스트 OS 에서 127.0.0.1로 접속하면 됩니다.</p></blockquote><h4 id="Mariadb5-버전대-사용-utf-8"><a href="#Mariadb5-버전대-사용-utf-8" class="headerlink" title="Mariadb5 버전대 사용(utf-8)"></a>Mariadb5 버전대 사용(utf-8)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name mariadb5 -p 127.0.0.1:3306:3306 \</span><br><span class="line">-v &#123;호스트에 위치할 데이타 디렉토리&#125;:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=&#123;root비밀번호&#125; \</span><br><span class="line">-d mariadb:5.5 \</span><br><span class="line">--character-set-server=utf8 \</span><br><span class="line">--collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure><h4 id="redis3-2-버전대-사용"><a href="#redis3-2-버전대-사용" class="headerlink" title="redis3.2 버전대 사용"></a>redis3.2 버전대 사용</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name redis -p 127.0.0.1:6379:6379 -d redis:3.2</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;blockquote&gt;&lt;p&gt;중 괄호를 포함한 부분은 각자에 맡게 변경하시면 됩니다.&lt;br&gt;호스트 OS 에서 127.0.0.1로 접속하면 됩니다.&lt;/p&gt;&lt;/blockquote&gt;&lt;h4 id=&quot;Mariadb5-버전대-사용-utf-8&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="https://blog.seq.kr/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>자바스크립트에서 false 반환 하는 경우</title>
+    <link href="https://blog.seq.kr/2018/04/10/javascript/when-return-false/"/>
+    <id>https://blog.seq.kr/2018/04/10/javascript/when-return-false/</id>
+    <published>2018-04-10T13:38:12.000Z</published>
+    <updated>2018-11-16T13:52:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>특정 변수의 값의 true, false 여부를 반환할시 아래와 같은 조건은 묵시적으로 false를 반환한다.<br><figure class="highlight javascript"><figcaption><span>아래와 같은 코드 사용 시</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( test ) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"true"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"false"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><ul><li>null 일 때</li><li>undefined 일 때</li><li>NaN 일 때</li><li>공백 일 때</li><li>숫자 0 (‘0’ 은 true)</li><li>false</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;p&gt;특정 변수의 값의 true, false 여부를 반환할시 아래와 같은 조건은 묵시적으로 false를 반환한다.&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;아래와 같은 코드 사용 시
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="https://blog.seq.kr/categories/Javascript/"/>
+    
+    
+      <category term="Javascript" scheme="https://blog.seq.kr/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>모든 이미지 컨테이너 일괄 삭제</title>
+    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
+    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
+    <published>2018-04-09T15:00:00.000Z</published>
+    <updated>2018-11-16T13:01:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h4 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h4 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;h4 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu 16.04 Mariadb10 설치 하기 (ssh tunneling 접속)</title>
+    <link href="https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/"/>
+    <id>https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/</id>
+    <published>2018-04-07T15:00:00.000Z</published>
+    <updated>2018-11-16T13:08:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h4 id="기본-Repository에서-Mariadb10-설치"><a href="#기본-Repository에서-Mariadb10-설치" class="headerlink" title="기본 Repository에서 Mariadb10 설치"></a>기본 Repository에서 Mariadb10 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure><h4 id="기본-설정"><a href="#기본-설정" class="headerlink" title="기본 설정"></a>기본 설정</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql_secure_installation</span><br></pre></td></tr></table></figure><h4 id="ssh-tunneling-접속-전"><a href="#ssh-tunneling-접속-전" class="headerlink" title="ssh tunneling 접속 전"></a>ssh tunneling 접속 전</h4><p>ssh tunneling을 통해 원격에서 mysql에 root 유저에 접속하기 위해 설정합니다. (원래 이런게 없었던걸로 기억하는데 이 부분 때문에 한참 삽질하였습니다. mariadb10 만 그런건지… 해당 설정을 하지 않으면 ssh tunneling을 통해 원격에서 mysql 에 접속할수가 없습니다.)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql -u root -p</span></span><br><span class="line">&gt; use mysql;</span><br><span class="line">&gt; update user <span class="built_in">set</span> plugin=<span class="string">'mysql_native_password'</span> <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line">&gt; flush privileges;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;&lt;h4 id=&quot;기본-Repository에서-Mariadb10-설치&quot;&gt;&lt;a href=&quot;#기본-Repository에서-Mariadb10-설치&quot; class=&quot;headerlink&quot; title=&quot;기본 Repository에서 Mariadb10 설치&quot;&gt;&lt;/
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://blog.seq.kr/tags/ubuntu/"/>
+    
+      <category term="database" scheme="https://blog.seq.kr/tags/database/"/>
+    
+  </entry>
+  
+</feed>
