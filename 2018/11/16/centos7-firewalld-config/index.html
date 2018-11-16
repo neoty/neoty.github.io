@@ -53,6 +53,50 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Trebuchet MS:300,300italic,400,400italic,700,700italic|Trebuchet MS:300,300italic,400,400italic,700,700italic|Trebuchet MS:300,300italic,400,400italic,700,700italic|Trebuchet MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -108,18 +152,18 @@
 
 
 
-  <meta name="description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
+  <meta name="description" content="공식 메뉴얼 제공 사이트입니다. Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!  permanent 옵션이 붙으면 영구적으로">
 <meta name="keywords" content="linux,firewalld">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu docker compose 설치">
 <meta property="og:url" content="https://blog.seq.kr/2018/11/16/centos7-firewalld-config/index.html">
 <meta property="og:site_name" content="섥">
-<meta property="og:description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
+<meta property="og:description" content="공식 메뉴얼 제공 사이트입니다. Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!  permanent 옵션이 붙으면 영구적으로">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-11-16T10:54:21.000Z">
+<meta property="og:updated_time" content="2018-11-16T11:53:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu docker compose 설치">
-<meta name="twitter:description" content="공식 메뉴얼 제공 사이트입니다.  http://www.firewalld.org/documentation/  Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽">
+<meta name="twitter:description" content="공식 메뉴얼 제공 사이트입니다. Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!  permanent 옵션이 붙으면 영구적으로">
 
 
 
@@ -141,6 +185,15 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129341254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129341254-1');
+</script>
 
 
 
@@ -339,7 +392,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="seq.kr">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/19975402?s=400&u=776e31ca3fc02d2000a15d8861a91ace2a7a1f15&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -376,7 +429,7 @@
                 
               
 
-              <time title="Post created: 2018-11-16 19:39:23 / Updated at: 19:54:21" itemprop="dateCreated datePublished" datetime="2018-11-16T19:39:23+09:00">2018-11-16</time>
+              <time title="Post created: 2018-11-16 19:39:23 / Updated at: 20:53:48" itemprop="dateCreated datePublished" datetime="2018-11-16T19:39:23+09:00">2018-11-16</time>
             
 
             
@@ -444,10 +497,7 @@
 
       
         <hr>
-<p>공식 메뉴얼 제공 사이트입니다.</p>
-<ul>
-<li><a href="http://www.firewalld.org/documentation/" target="_blank" rel="noopener">http://www.firewalld.org/documentation/</a></li>
-</ul>
+<p><a href="http://www.firewalld.org/documentation/" target="_blank" rel="noopener">공식 메뉴얼 제공 사이트입니다.</a></p>
 <p>Centos 7 으로 넘어오면서 기본 방화벽 설정 하는 방법이 변경되었습니다. 정확히는 RHEL 7 이상부터<br>개인 적으로 기존 텍스트로 기술하는게 더 편한것 같네요. 요즘에야 클라우드 쪽에선 방화벽을 지원하니 특별한 경우가 아니고서야 리눅스에서 방화벽 설정할일이 덜하긴 하겠지만요!</p>
 <blockquote>
 <p>permanent 옵션이 붙으면 영구적으로 설정된다는 뜻입니다.</p>
@@ -578,6 +628,8 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/19975402?s=400&u=776e31ca3fc02d2000a15d8861a91ace2a7a1f15&v=4" alt="seq.kr">
             
               <p class="site-author-name" itemprop="name">seq.kr</p>
               <p class="site-description motion-element" itemprop="description"></p>
