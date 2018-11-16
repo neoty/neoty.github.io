@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[모든 이미지 컨테이너 일괄 삭제]]></title>
+    <url>%2F2018%2F11%2F16%2Fdocker-container-image-remove%2F</url>
+    <content type="text"><![CDATA[모든 컨테이너 삭제1docker rm $(docker ps -a -q) 모든 이미지 삭제1docker rmi $(docker images -q)]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>chmod</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[chmod 퍼미션]]></title>
     <url>%2F2018%2F11%2F16%2Fchmod-permisstion-table%2F</url>
     <content type="text"><![CDATA[https://en.wikipedia.org/wiki/Chmod # Permisstion rwx Binary 7 read, write and execute rwx 111 6 read and write rw- 110 5 read and execute r-x 101 4 read only r– 100 3 write and execute -wx 011 2 write only -w- 010 1 execute only –x 001 0 none — 000]]></content>
