@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu docker compose 설치]]></title>
+    <url>%2F2018%2F11%2F16%2Fdocker-compose-install-ubuntu%2F</url>
+    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install - (https://docs.docker.com/install/linux/docker-ce/ubuntu/)docker-compose install - (https://docs.docker.com/compose/install/) docker docker를 설치하고 docker-compose를 설치하여야 합니다. 1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-ce docker가 제대로 설치 되었는지 테스트 12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-world docker-compose docker compose 설치 및 설치 확인12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker로 빠르게 mariadb, redis 서버 구동시키기]]></title>
     <url>%2F2018%2F11%2F14%2Fdocker-redis-mariadb-start%2F</url>
     <content type="text"><![CDATA[중 괄호를 포함한 부분은 각자에 맡게 변경하시면 됩니다.호스트 OS 에서 127.0.0.1로 접속하면 됩니다. Mariadb5 버전대 사용(utf-8)123456$ sudo docker run --name mariadb5 -p 127.0.0.1:3306:3306 \-v &#123;호스트에 위치할 데이타 디렉토리&#125;:/var/lib/mysql \-e MYSQL_ROOT_PASSWORD=&#123;root비밀번호&#125; \-d mariadb:5.5 \--character-set-server=utf8 \--collation-server=utf8_general_ci redis3.2 버전대 사용1$ sudo docker run --name redis -p 127.0.0.1:6379:6379 -d redis:3.2]]></content>
