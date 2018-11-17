@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Trebuchet MS', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -194,18 +194,16 @@ body {
 @media (max-width: 767px) {
   body {
     padding-right: 0 !important;
-    font-size: 14px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   body {
     padding-right: 0 !important;
-    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 h1,
@@ -1016,7 +1014,6 @@ pre .javascript .function {
   .pagination .page-number,
   .pagination .space {
     margin: 0 5px;
-    font-size: 14px;
   }
 }
 .pagination .prev,
@@ -1101,14 +1098,12 @@ pre .javascript .function {
   .back-to-top {
     right: 20px;
     opacity: 0.8;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .back-to-top {
     right: 20px;
     opacity: 0.8;
-    font-size: 14px;
   }
 }
 .back-to-top.back-to-top-on {
@@ -1131,7 +1126,6 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .site-meta {
     text-align: center;
-    font-size: 14px;
   }
 }
 .brand {
@@ -1183,7 +1177,6 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .site-nav-toggle {
     display: block;
-    font-size: 14px;
   }
 }
 .site-nav-toggle button {
@@ -1199,13 +1192,11 @@ pre .javascript .function {
     padding: 0 10px;
     clear: both;
     border-top: 1px solid #ddd;
-    font-size: 14px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-nav {
     display: block !important;
-    font-size: 14px;
   }
 }
 @media (min-width: 992px) {
@@ -1268,7 +1259,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1398,7 +1389,6 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .posts-collapse {
     margin: 0 20px;
-    font-size: 14px;
   }
 }
 .posts-collapse .collection-title {
@@ -1562,25 +1552,21 @@ pre .javascript .function {
 @media (min-width: 768px) and (max-width: 991px) {
   .post-meta-item-icon {
     display: inline-block;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .post-meta-item-icon {
     display: inline-block;
-    font-size: 14px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .post-meta-item-text {
     display: none;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .post-meta-item-text {
     display: none;
-    font-size: 14px;
   }
 }
 .post-button {
@@ -1727,16 +1713,6 @@ pre .javascript .function {
 .sidebar .exturl:hover {
   color: #eee;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .sidebar {
-    font-size: 14px;
-  }
-}
-@media (max-width: 767px) {
-  .sidebar {
-    font-size: 14px;
-  }
-}
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
@@ -1767,14 +1743,12 @@ pre .javascript .function {
   .sidebar-toggle {
     right: 20px;
     opacity: 0.8;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .sidebar-toggle {
     right: 20px;
     opacity: 0.8;
-    font-size: 14px;
   }
 }
 .sidebar-toggle-line {
@@ -1902,7 +1876,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff6c;
+  background: #ffcd6c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2045,7 +2019,6 @@ pre .javascript .function {
 @media (max-width: 767px) {
   #sidebar-dimmer {
     display: block;
-    font-size: 14px;
   }
 }
 .footer {
@@ -2239,7 +2212,6 @@ pre .javascript .function {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    font-size: 14px;
   }
 }
 .local-search-popup ul.search-result-list {
@@ -2337,7 +2309,6 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .page-archive .archive-page-counter {
     top: 5px;
-    font-size: 14px;
   }
 }
 .page-archive .posts-collapse .archive-move-on {
@@ -2576,7 +2547,7 @@ ul.breadcrumb {
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 ul.breadcrumb li {
   display: inline;
@@ -2618,7 +2589,6 @@ hr {
     width: auto;
     margin-bottom: 50px;
     padding: 10px;
-    font-size: 14px;
   }
 }
 .site-meta {
@@ -2629,7 +2599,6 @@ hr {
 @media (max-width: 767px) {
   .site-meta {
     margin-left: 10px;
-    font-size: 14px;
   }
 }
 .site-meta .brand {
@@ -2639,7 +2608,6 @@ hr {
 @media (max-width: 767px) {
   .site-meta .brand {
     display: block;
-    font-size: 14px;
   }
 }
 .site-meta .logo {
@@ -2652,7 +2620,6 @@ hr {
 @media (max-width: 767px) {
   .site-meta .site-title {
     line-height: 34px;
-    font-size: 14px;
   }
 }
 .logo-line-before,
@@ -2666,7 +2633,6 @@ hr {
   .logo-line-before,
   .logo-line-after {
     display: none;
-    font-size: 14px;
   }
 }
 .logo-line-before i,
@@ -2680,7 +2646,6 @@ hr {
   .logo-line-before i,
   .logo-line-after i {
     height: 3px;
-    font-size: 14px;
   }
 }
 .use-motion .logo-line-before i {
@@ -2703,7 +2668,6 @@ hr {
   .menu {
     margin: 20px 0 0 0;
     padding: 0;
-    font-size: 14px;
   }
 }
 .menu br {
@@ -2715,7 +2679,6 @@ hr {
 @media (max-width: 767px) {
   .menu .menu-item {
     display: block;
-    font-size: 14px;
   }
 }
 .menu .menu-item .badge {
@@ -2735,7 +2698,6 @@ hr {
   .menu .menu-item .badge {
     float: right;
     margin: 0.35em 0 0 0;
-    font-size: 14px;
   }
 }
 .menu .menu-item a {
@@ -2747,7 +2709,6 @@ hr {
 @media (max-width: 767px) {
   .menu .menu-item a {
     text-align: left;
-    font-size: 14px;
   }
 }
 .menu .menu-item a:hover,
@@ -2760,13 +2721,11 @@ hr {
 @media (max-width: 767px) {
   .menu a::before {
     display: block;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .menu {
     float: none;
-    font-size: 14px;
   }
 }
 .site-search form {
@@ -2783,7 +2742,6 @@ hr {
   .posts-expand .post-title,
   .posts-expand .post-meta {
     text-align: center;
-    font-size: 14px;
   }
 }
 .posts-expand .post-eof {
@@ -2807,7 +2765,6 @@ hr {
 @media (max-width: 767px) {
   .posts-expand .post-title {
     font-size: 19px;
-    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
@@ -2820,7 +2777,6 @@ hr {
 }
 @media (max-width: 767px) {
   .posts-expand .post-body {
-    font-size: 13px;
     font-size: 14px;
   }
 }
@@ -2847,7 +2803,7 @@ hr {
 }
 .post-button a {
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   background: none;
   border: none;
   border-bottom: 2px solid #666;
@@ -2855,13 +2811,12 @@ hr {
 }
 @media (max-width: 767px) {
   .post-button a {
-    font-size: 11px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (min-width: 1200px) {
   .post-button a {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 .post-button a:hover {
@@ -2888,13 +2843,11 @@ hr {
   .site-search {
     float: none;
     padding: 0 10px;
-    font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .container .main-inner {
     width: auto;
-    font-size: 14px;
   }
 }
 .page-post-detail .post-title,
@@ -2915,7 +2868,6 @@ hr {
   .pagination {
     margin: 80px 10px 0;
     text-align: center;
-    font-size: 14px;
   }
 }
 .footer {
@@ -2932,6 +2884,5 @@ hr {
   .footer-inner {
     width: auto;
     text-align: center;
-    font-size: 14px;
   }
 }

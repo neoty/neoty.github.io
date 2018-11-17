@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.seq.kr/"/>
-  <updated>2018-11-16T13:51:02.000Z</updated>
+  <updated>2018-11-17T01:48:12.000Z</updated>
   <id>https://blog.seq.kr/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://blog.seq.kr/2018/11/16/http/restful-status-code/"/>
     <id>https://blog.seq.kr/2018/11/16/http/restful-status-code/</id>
     <published>2018-11-16T13:38:12.000Z</published>
-    <updated>2018-11-16T13:51:02.000Z</updated>
+    <updated>2018-11-17T01:48:12.000Z</updated>
     
-    <content type="html"><![CDATA[<hr><blockquote><p>304 는 넣지 않았습니다. <a href="http://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener">참고링크</a></p></blockquote><h4 id="코드-상태별-설명"><a href="#코드-상태별-설명" class="headerlink" title="코드 상태별 설명"></a>코드 상태별 설명</h4><h5 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h5><ul><li>성공 상태를 나타내는 가장 일반적인 코드</li></ul><h5 id="201-Created"><a href="#201-Created" class="headerlink" title="201 Created"></a>201 Created</h5><ul><li>POST 혹은 PUT 요청이 성공하였을 때</li></ul><h5 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h5><ul><li>반환값이 없는 요청이 성공했을 때 (반환시 데이터 본문이 없어야 하므로 delete 시 사용)</li></ul><h5 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h5><ul><li>누락된 데이터, 잘못된 데이터(유효성)의 접근 시</li></ul><h5 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h5><ul><li>미 인증 혹은 인증 만료로 인한 에러 코드</li></ul><h5 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h5><ul><li>유효(권한 등)하지 않는 페이지의 접근 혹은 액션</li></ul><h5 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h5><ul><li>요청한 리소스가 없거나 보안상 401, 403 을 대체</li></ul><h5 id="409-Conflict"><a href="#409-Conflict" class="headerlink" title="409 Conflict"></a>409 Conflict</h5><ul><li>요청의 병합(동시작업)으로 인해 요청을 수행할 수 없을시</li></ul><h5 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h5><ul><li>서버측의 에러로 인한 일반적인 반환 코드(보안상의 이유로 사용자에게 에러 코드는 간략화 한다.)</li></ul>]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p>304 는 넣지 않았습니다. <a href="http://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener">참고링크</a></p></blockquote><h3 id="코드-상태별-설명"><a href="#코드-상태별-설명" class="headerlink" title="코드 상태별 설명"></a>코드 상태별 설명</h3><h4 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h4><ul><li>성공 상태를 나타내는 가장 일반적인 코드</li></ul><h4 id="201-Created"><a href="#201-Created" class="headerlink" title="201 Created"></a>201 Created</h4><ul><li>POST 혹은 PUT 요청이 성공하였을 때</li></ul><h4 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h4><ul><li>반환값이 없는 요청이 성공했을 때 (반환시 데이터 본문이 없어야 하므로 delete 시 사용)</li></ul><h4 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h4><ul><li>누락된 데이터, 잘못된 데이터(유효성)의 접근 시</li></ul><h4 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h4><ul><li>미 인증 혹은 인증 만료로 인한 에러 코드</li></ul><h4 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h4><ul><li>유효(권한 등)하지 않는 페이지의 접근 혹은 액션</li></ul><h4 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h4><ul><li>요청한 리소스가 없거나 보안상 401, 403 을 대체</li></ul><h4 id="409-Conflict"><a href="#409-Conflict" class="headerlink" title="409 Conflict"></a>409 Conflict</h4><ul><li>요청의 병합(동시작업)으로 인해 요청을 수행할 수 없을시</li></ul><h4 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h4><ul><li>서버측의 에러로 인한 일반적인 반환 코드(보안상의 이유로 사용자에게 에러 코드는 간략화 한다.)</li></ul>]]></content>
     
     <summary type="html">
     
