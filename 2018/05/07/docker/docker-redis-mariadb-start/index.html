@@ -355,8 +355,8 @@
     });</script><script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script><script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script><script>(function () {
 
       firebase.initializeApp({
-        apiKey: 'AIzaSyCxkNZ-nY4EdsK-7QXpuHUMF_JMlT_bAcQ',
-        projectId: 'blogseqkr'
+        apiKey: 'AIzaSyAKauBivB8XeiCcSaBSyV6iVg6sRdVuQVk',
+        projectId: 'blog-seq-kr'
       })
 
       function getCount(doc, increaseCount) {
@@ -409,7 +409,7 @@
       }
 
       var db = firebase.firestore()
-      var articles = db.collection('/articles')
+      var articles = db.collection('/articles-count')
 
       //https://hexo.io/docs/variables.html
       var isPost = 'Docker로 빠르게 mariadb, redis 서버 구동시키기'.length > 0
