@@ -176,18 +176,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
-    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
-    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-        <tag>nvm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu 16.04 Mariadb10 설치 하기 (ssh tunneling 접속)]]></title>
     <url>%2F2018%2F04%2F08%2Flinux%2Fubuntu16.04-maraidb10-install%2F</url>
     <content type="text"><![CDATA[기본 Repository에서 Mariadb10 설치12$ sudo apt-get update$ sudo apt-get install mariadb-server mariadb-client기본 설정1$ sudo mysql_secure_installationssh tunneling 접속 전ssh tunneling을 통해 원격에서 mysql에 root 유저에 접속하기 위해 설정합니다. (원래 이런게 없었던걸로 기억하는데 이 부분 때문에 한참 삽질하였습니다. mariadb10 만 그런건지… 해당 설정을 하지 않으면 ssh tunneling을 통해 원격에서 mysql 에 접속할수가 없습니다.)1234# mysql -u root -p&gt; use mysql;&gt; update user set plugin='mysql_native_password' where user='root';&gt; flush privileges;]]></content>
@@ -198,6 +186,18 @@
         <tag>linux</tag>
         <tag>ubuntu</tag>
         <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
+    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
+    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>nvm</tag>
       </tags>
   </entry>
 </search>
