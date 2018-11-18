@@ -4,7 +4,7 @@
 
     <sitemap>
         <loc>https://blog.seq.kr/post-sitemap.xml</loc>
-        <lastmod>2018-11-18T07:49:58.000Z</lastmod>
+        <lastmod>2018-11-18T04:47:07.000Z</lastmod>
     </sitemap>
 
     <sitemap>
@@ -14,12 +14,12 @@
 
     <sitemap>
         <loc>https://blog.seq.kr/category-sitemap.xml</loc>
-        <lastmod>2018-11-16T13:01:26.000Z</lastmod>
+        <lastmod>2018-09-02T14:42:53.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://blog.seq.kr/tag-sitemap.xml</loc>
-        <lastmod>2018-11-16T12:55:55.000Z</lastmod>
+        <lastmod>2018-09-02T14:42:53.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>

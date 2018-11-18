@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/categories/Open-source/</loc>
+        <lastmod>2018-09-02T14:42:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/categories/Docker/</loc>
         <lastmod>2018-11-16T13:01:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -38,13 +45,6 @@
     <url>
         <loc>https://blog.seq.kr/categories/Nodejs/</loc>
         <lastmod>2018-11-18T04:47:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/categories/Open-source/</loc>
-        <lastmod>2018-11-18T07:49:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
