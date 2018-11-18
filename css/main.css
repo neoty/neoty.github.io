@@ -204,6 +204,7 @@ body {
 @media (min-width: 1200px) {
   body {
     font-size: 16px;
+    font-size: 15px;
   }
 }
 h1,
@@ -456,6 +457,9 @@ body {
   width: 700px;
 }
 @media (min-width: 1200px) {
+  .header-inner {
+    font-size: 15px;
+  }
   .container .header-inner {
     width: 800px;
   }
@@ -473,6 +477,9 @@ body {
   width: 700px;
 }
 @media (min-width: 1200px) {
+  .main-inner {
+    font-size: 15px;
+  }
   .container .main-inner {
     width: 800px;
   }
@@ -495,6 +502,9 @@ body {
   width: 700px;
 }
 @media (min-width: 1200px) {
+  .footer-inner {
+    font-size: 15px;
+  }
   .container .footer-inner {
     width: 800px;
   }
@@ -1876,7 +1886,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffe8;
+  background: #ffed6f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2770,6 +2780,7 @@ hr {
 @media (min-width: 1200px) {
   .posts-expand .post-title {
     font-size: 23px;
+    font-size: 15px;
   }
 }
 .posts-expand .post-title:hover:before {
@@ -2817,6 +2828,7 @@ hr {
 @media (min-width: 1200px) {
   .post-button a {
     font-size: 16px;
+    font-size: 15px;
   }
 }
 .post-button a:hover {
