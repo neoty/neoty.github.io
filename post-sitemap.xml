@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/</loc>
+        <lastmod>2018-11-18T04:47:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/16/http/restful-status-code/</loc>
         <lastmod>2018-11-17T01:48:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
