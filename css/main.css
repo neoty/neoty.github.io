@@ -195,10 +195,16 @@ body {
   body {
     padding-right: 0 !important;
   }
+  body .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   body {
     padding-right: 0 !important;
+  }
+  body .category-all {
+    font-size: 18px;
   }
 }
 @media (min-width: 1200px) {
@@ -207,6 +213,9 @@ body {
   }
   body .post-body {
     font-size: 14px;
+  }
+  body .post-body .category-all {
+    font-size: 18px;
   }
 }
 h1,
@@ -236,12 +245,18 @@ h1 {
   h1 {
     font-size: 20px;
   }
+  .category-all {
+    font-size: 18px;
+  }
 }
 h2 {
   font-size: 22px;
 }
 @media (max-width: 767px) {
   h2 {
+    font-size: 18px;
+  }
+  .category-all {
     font-size: 18px;
   }
 }
@@ -252,6 +267,9 @@ h3 {
   h3 {
     font-size: 16px;
   }
+  .category-all {
+    font-size: 18px;
+  }
 }
 h4 {
   font-size: 18px;
@@ -259,6 +277,9 @@ h4 {
 @media (max-width: 767px) {
   h4 {
     font-size: 14px;
+  }
+  .category-all {
+    font-size: 18px;
   }
 }
 h5 {
@@ -268,6 +289,9 @@ h5 {
   h5 {
     font-size: 12px;
   }
+  .category-all {
+    font-size: 18px;
+  }
 }
 h6 {
   font-size: 14px;
@@ -275,6 +299,9 @@ h6 {
 @media (max-width: 767px) {
   h6 {
     font-size: 10px;
+  }
+  .category-all {
+    font-size: 18px;
   }
 }
 p {
@@ -465,6 +492,9 @@ body {
   .header-inner .post-body {
     font-size: 14px;
   }
+  .header-inner .post-body .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -484,6 +514,9 @@ body {
   }
   .main-inner .post-body {
     font-size: 14px;
+  }
+  .main-inner .post-body .category-all {
+    font-size: 18px;
   }
 }
 @media (min-width: 1600px) {
@@ -509,6 +542,9 @@ body {
   }
   .footer-inner .post-body {
     font-size: 14px;
+  }
+  .footer-inner .post-body .category-all {
+    font-size: 18px;
   }
 }
 @media (min-width: 1600px) {
@@ -1027,6 +1063,13 @@ pre .javascript .function {
   .pagination .space {
     margin: 0 5px;
   }
+  .page-number-basic .category-all,
+  .pagination .prev .category-all,
+  .pagination .next .category-all,
+  .pagination .page-number .category-all,
+  .pagination .space .category-all {
+    font-size: 18px;
+  }
 }
 .pagination .prev,
 .pagination .next,
@@ -1111,11 +1154,17 @@ pre .javascript .function {
     right: 20px;
     opacity: 0.8;
   }
+  .back-to-top .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .back-to-top {
     right: 20px;
     opacity: 0.8;
+  }
+  .back-to-top .category-all {
+    font-size: 18px;
   }
 }
 .back-to-top.back-to-top-on {
@@ -1138,6 +1187,9 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .site-meta {
     text-align: center;
+  }
+  .site-meta .category-all {
+    font-size: 18px;
   }
 }
 .brand {
@@ -1190,6 +1242,9 @@ pre .javascript .function {
   .site-nav-toggle {
     display: block;
   }
+  .site-nav-toggle .category-all {
+    font-size: 18px;
+  }
 }
 .site-nav-toggle button {
   margin-top: 2px;
@@ -1205,15 +1260,24 @@ pre .javascript .function {
     clear: both;
     border-top: 1px solid #ddd;
   }
+  .site-nav .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-nav {
     display: block !important;
   }
+  .site-nav .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 992px) {
   .site-nav {
     display: block !important;
+  }
+  .site-nav .category-all {
+    font-size: 18px;
   }
 }
 .menu {
@@ -1323,6 +1387,9 @@ pre .javascript .function {
   .posts-expand .post-body {
     text-align: justify;
   }
+  .posts-expand .post-body .category-all {
+    font-size: 18px;
+  }
 }
 .posts-expand .post-body h2,
 .posts-expand .post-body h3,
@@ -1401,6 +1468,9 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .posts-collapse {
     margin: 0 20px;
+  }
+  .posts-collapse .category-all {
+    font-size: 18px;
   }
 }
 .posts-collapse .collection-title {
@@ -1565,20 +1635,32 @@ pre .javascript .function {
   .post-meta-item-icon {
     display: inline-block;
   }
+  .post-meta-item-icon .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .post-meta-item-icon {
     display: inline-block;
+  }
+  .post-meta-item-icon .category-all {
+    font-size: 18px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .post-meta-item-text {
     display: none;
   }
+  .post-meta-item-text .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .post-meta-item-text {
     display: none;
+  }
+  .post-meta-item-text .category-all {
+    font-size: 18px;
   }
 }
 .post-button {
@@ -1725,6 +1807,16 @@ pre .javascript .function {
 .sidebar .exturl:hover {
   color: #eee;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar .category-all {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar .category-all {
+    font-size: 18px;
+  }
+}
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
@@ -1756,11 +1848,17 @@ pre .javascript .function {
     right: 20px;
     opacity: 0.8;
   }
+  .sidebar-toggle .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .sidebar-toggle {
     right: 20px;
     opacity: 0.8;
+  }
+  .sidebar-toggle .category-all {
+    font-size: 18px;
   }
 }
 .sidebar-toggle-line {
@@ -1888,7 +1986,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #123dff;
+  background: #699585;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2031,6 +2129,9 @@ pre .javascript .function {
 @media (max-width: 767px) {
   #sidebar-dimmer {
     display: block;
+  }
+  #sidebar-dimmer .category-all {
+    font-size: 18px;
   }
 }
 .footer {
@@ -2225,6 +2326,9 @@ pre .javascript .function {
     height: 100%;
     border-radius: 0;
   }
+  .local-search-popup .category-all {
+    font-size: 18px;
+  }
 }
 .local-search-popup ul.search-result-list {
   padding: 0;
@@ -2321,6 +2425,9 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .page-archive .archive-page-counter {
     top: 5px;
+  }
+  .page-archive .archive-page-counter .category-all {
+    font-size: 18px;
   }
 }
 .page-archive .posts-collapse .archive-move-on {
@@ -2602,6 +2709,9 @@ hr {
     margin-bottom: 50px;
     padding: 10px;
   }
+  .header-inner .category-all {
+    font-size: 18px;
+  }
 }
 .site-meta {
   float: left;
@@ -2612,6 +2722,9 @@ hr {
   .site-meta {
     margin-left: 10px;
   }
+  .site-meta .category-all {
+    font-size: 18px;
+  }
 }
 .site-meta .brand {
   padding: 2px 1px;
@@ -2620,6 +2733,9 @@ hr {
 @media (max-width: 767px) {
   .site-meta .brand {
     display: block;
+  }
+  .site-meta .brand .category-all {
+    font-size: 18px;
   }
 }
 .site-meta .logo {
@@ -2632,6 +2748,9 @@ hr {
 @media (max-width: 767px) {
   .site-meta .site-title {
     line-height: 34px;
+  }
+  .site-meta .site-title .category-all {
+    font-size: 18px;
   }
 }
 .logo-line-before,
@@ -2646,6 +2765,10 @@ hr {
   .logo-line-after {
     display: none;
   }
+  .logo-line-before .category-all,
+  .logo-line-after .category-all {
+    font-size: 18px;
+  }
 }
 .logo-line-before i,
 .logo-line-after i {
@@ -2658,6 +2781,10 @@ hr {
   .logo-line-before i,
   .logo-line-after i {
     height: 3px;
+  }
+  .logo-line-before i .category-all,
+  .logo-line-after i .category-all {
+    font-size: 18px;
   }
 }
 .use-motion .logo-line-before i {
@@ -2681,6 +2808,9 @@ hr {
     margin: 20px 0 0 0;
     padding: 0;
   }
+  .menu .category-all {
+    font-size: 18px;
+  }
 }
 .menu br {
   display: none;
@@ -2691,6 +2821,9 @@ hr {
 @media (max-width: 767px) {
   .menu .menu-item {
     display: block;
+  }
+  .menu .menu-item .category-all {
+    font-size: 18px;
   }
 }
 .menu .menu-item .badge {
@@ -2711,6 +2844,9 @@ hr {
     float: right;
     margin: 0.35em 0 0 0;
   }
+  .menu .menu-item .badge .category-all {
+    font-size: 18px;
+  }
 }
 .menu .menu-item a {
   padding: 0 10px;
@@ -2721,6 +2857,9 @@ hr {
 @media (max-width: 767px) {
   .menu .menu-item a {
     text-align: left;
+  }
+  .menu .menu-item a .category-all {
+    font-size: 18px;
   }
 }
 .menu .menu-item a:hover,
@@ -2734,10 +2873,16 @@ hr {
   .menu a::before {
     display: block;
   }
+  .menu a::before .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .menu {
     float: none;
+  }
+  .menu .category-all {
+    font-size: 18px;
   }
 }
 .site-search form {
@@ -2754,6 +2899,10 @@ hr {
   .posts-expand .post-title,
   .posts-expand .post-meta {
     text-align: center;
+  }
+  .posts-expand .post-title .category-all,
+  .posts-expand .post-meta .category-all {
+    font-size: 18px;
   }
 }
 .posts-expand .post-eof {
@@ -2778,6 +2927,9 @@ hr {
   .posts-expand .post-title {
     font-size: 19px;
   }
+  .posts-expand .post-title .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 1200px) {
   .posts-expand .post-title {
@@ -2786,6 +2938,9 @@ hr {
   .posts-expand .post-title .post-body {
     font-size: 14px;
   }
+  .posts-expand .post-title .post-body .category-all {
+    font-size: 18px;
+  }
 }
 .posts-expand .post-title:hover:before {
   background: #222;
@@ -2793,6 +2948,9 @@ hr {
 @media (max-width: 767px) {
   .posts-expand .post-body {
     font-size: 14px;
+  }
+  .posts-expand .post-body .category-all {
+    font-size: 18px;
   }
 }
 .posts-expand .post-body img {
@@ -2828,6 +2986,9 @@ hr {
   .post-button a {
     font-size: 12px;
   }
+  .post-button a .category-all {
+    font-size: 18px;
+  }
 }
 @media (min-width: 1200px) {
   .post-button a {
@@ -2835,6 +2996,9 @@ hr {
   }
   .post-button a .post-body {
     font-size: 14px;
+  }
+  .post-button a .post-body .category-all {
+    font-size: 18px;
   }
 }
 .post-button a:hover {
@@ -2862,10 +3026,16 @@ hr {
     float: none;
     padding: 0 10px;
   }
+  .site-search .category-all {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   .container .main-inner {
     width: auto;
+  }
+  .container .main-inner .category-all {
+    font-size: 18px;
   }
 }
 .page-post-detail .post-title,
@@ -2887,6 +3057,9 @@ hr {
     margin: 80px 10px 0;
     text-align: center;
   }
+  .pagination .category-all {
+    font-size: 18px;
+  }
 }
 .footer {
   margin-top: 80px;
@@ -2902,5 +3075,8 @@ hr {
   .footer-inner {
     width: auto;
     text-align: center;
+  }
+  .footer-inner .category-all {
+    font-size: 18px;
   }
 }
