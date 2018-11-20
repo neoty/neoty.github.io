@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/20/nodejs/dotenv-load-enviroment-file/</loc>
+        <lastmod>2018-11-20T12:07:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/11/19/nodejs/nodejs-mysql-pool/</loc>
+        <lastmod>2018-11-20T11:16:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/</loc>
         <lastmod>2018-11-20T10:44:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +82,6 @@
     <url>
         <loc>https://blog.seq.kr/2018/11/16/docker/dockerlize-nodejs/</loc>
         <lastmod>2018-11-20T10:41:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/19/nodejs/nodejs-mysql-pool/</loc>
-        <lastmod>2018-11-20T10:32:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
