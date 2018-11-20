@@ -1986,7 +1986,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1bffff;
+  background: #d7f6ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2684,7 +2684,7 @@ a {
 }
 hr {
   margin: 20px 0;
-  height: 2px;
+  height: 1px;
 }
 .main-inner {
   margin-top: 80px;
@@ -3079,4 +3079,8 @@ hr {
   .footer-inner .category-all {
     font-size: 16px;
   }
+}
+.post-body h3 {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 8px;
 }

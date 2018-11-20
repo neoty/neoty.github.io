@@ -8,8 +8,72 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/</loc>
+        <lastmod>2018-11-20T10:44:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</loc>
+        <lastmod>2018-11-20T10:44:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/05/07/docker/docker-redis-mariadb-start/</loc>
+        <lastmod>2018-11-20T10:44:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/11/10/docker/pull-image-deploy/</loc>
+        <lastmod>2018-11-20T10:44:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/09/04/linux/centos7-firewalld-config/</loc>
+        <lastmod>2018-11-20T10:44:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/04/10/javascript/when-return-false/</loc>
+        <lastmod>2018-11-20T10:43:51.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/11/16/http/http-response-code-roadmap/</loc>
+        <lastmod>2018-11-20T10:43:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/11/16/docker/dockerlize-nodejs/</loc>
+        <lastmod>2018-11-20T10:41:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/19/nodejs/nodejs-mysql-pool/</loc>
-        <lastmod>2018-11-20T10:07:09.000Z</lastmod>
+        <lastmod>2018-11-20T10:32:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,22 +112,6 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/2018/04/10/javascript/when-return-false/</loc>
-        <lastmod>2018-11-16T13:52:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/16/http/http-response-code-roadmap/</loc>
-        <lastmod>2018-11-16T13:37:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/2018/09/02/linux/ubuntu16.04-swap-config/</loc>
         <lastmod>2018-11-16T13:17:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,56 +128,8 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</loc>
-        <lastmod>2018-11-16T13:01:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/2018/11/16/linux/timezone-change/</loc>
         <lastmod>2018-11-16T13:00:53.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/16/docker/dockerlize-nodejs/</loc>
-        <lastmod>2018-11-16T12:57:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/09/04/linux/centos7-firewalld-config/</loc>
-        <lastmod>2018-11-16T12:56:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/05/07/docker/docker-redis-mariadb-start/</loc>
-        <lastmod>2018-11-16T12:56:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/</loc>
-        <lastmod>2018-11-16T12:56:04.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/10/docker/pull-image-deploy/</loc>
-        <lastmod>2018-11-16T12:55:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
