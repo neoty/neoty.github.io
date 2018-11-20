@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[nodejs mysql connection pooling]]></title>
+    <title><![CDATA[mysql connection pooling]]></title>
     <url>%2F2018%2F11%2F19%2Fnodejs%2Fnodejs-mysql-pool%2F</url>
-    <content type="text"><![CDATA[database pooling 이 란In software engineering, a connection pool is a cache of database connections maintained so that the connections can be reused when future requests to the database are required. Connection pools are used to enhance the performance of executing commands on a database. (구글 database pooling 검색 시)간단히 말해서 데이터베이스 커넥션의 캐시 개념이다 적당한 양의 pool 을 생성해놓고 application에서 database 접근이 필요할 때 connection을 처음부터 맺는 게 아니라 기존에 맺어져 있던 connection 을 하나 들고 와서 바로 사용할 수 있게 하는 개념입니다.mysql module pool에 대한 자세한 설명은 여기서code 구현 (기본 setup pass)mysql 모듈 설치1$ npm install mysqlpool 생성최초 1회 database에 접속하여 connection 이 정상일 경우 pool 을 생성하는 코드 pool 을 global로 할당하였지만 입맛에 맞게 수정하시면 됩니다.db.js12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import mysql from 'mysql';/** 기본 정보 설정*/const connectionInfo = &#123; host: process.env.DB_HOST, // mysql 호스트 port: process.env.DB_PORT, // mysql 포트 user: process.env.DB_USER, // mysql access 아이디 password: process.env.DB_PASSWORD, // mysql access 비밀번호 database: process.env.DB_DATABASE, // 기본 접근 database 명 connectionLimit: process.env.DB_CONNECTION_LIMIT, // 최대 생성할 수 있는 pool 개수(추후 포스팅) charset: process.env.DB_CHARSET, // 연결 케릭터셋&#125;;/** pool 에서 실행되는 모든 쿼리들의 sql 로그를 남김*/const poolEventSetup = () =&gt; &#123; global.pool.on('connection', (poolConnection) =&gt; &#123; poolConnection.on('enqueue', (sequence) =&gt; &#123; if (sequence.constructor.name === 'Query') &#123; console.log(sequence.sql); &#125; &#125;); &#125;);&#125;;/** 일반 connection 접속 체크 후 pool 생성*/const initialization = (callback) =&gt; &#123; const connectionCheck = mysql.createConnection(connectionInfo); connectionCheck.connect((err) =&gt; &#123; connectionCheck.end(); // connection 에러 발생 if (err) return callback(err); // global 할당 ex) pool.query('select * from test', (err, results) =&gt; &#123;&#125;); global.pool = mysql.createPool(connectionInfo); // 개발 환경 시 실행 query 로깅 활성화 if (process.env.NODE_ENV !== 'production') poolEventSetup(); callback(null); &#125;);&#125;;module.exports.init = initialization;app.js module load불필요 코드 생략123456789...require('db').init((err) =&gt; &#123; if (err) &#123; process.exit(); &#125; else &#123; console.log('pool 생성 완료'); &#125;&#125;);...pool 생성 시connectionLimit 값을 100으로 하고 앱을 구동시 pool connection 이 곧바로 100개가 생성이 되진 않습니다, 초기엔 최소의 pool 개수를 유지하고 실제 여유분의 pool 이 없을 시 connectionLimit 개수만큼 pool connection 이 생성됩니다. (동시에 실행되는 query 가 많을 시 생성)실제로 다양한 옵션이 존재하고 mysql에 connection timeout 설정도 해주어야 진정한 pool 효과를 볼 수가 있습니다 해당 부분에 대해서 추후에 포스팅으로 다루겠습니다.]]></content>
+    <content type="text"><![CDATA[database pooling 이 란In software engineering, a connection pool is a cache of database connections maintained so that the connections can be reused when future requests to the database are required. Connection pools are used to enhance the performance of executing commands on a database. (구글 database pooling 검색 시)간단히 말해서 데이터베이스 커넥션의 캐시 개념이다 적당한 양의 pool 을 생성해놓고 application에서 database 접근이 필요할 때 connection을 처음부터 맺는 게 아니라 기존에 맺어져 있던 connection 을 하나 들고 와서 바로 사용할 수 있게 하는 개념입니다.mysql module pool에 대한 자세한 설명은 여기서code 구현 (기본 setup pass)mysql 모듈 설치1$ npm install mysqlpool 생성최초 1회 database에 접속하여 connection 이 정상일 경우 pool 을 생성하는 코드 pool 을 global로 할당하였지만 입맛에 맞게 수정하시면 됩니다.db.js12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import mysql from 'mysql';/** 기본 정보 설정*/const connectionInfo = &#123; host: process.env.DB_HOST, // mysql 호스트 port: process.env.DB_PORT, // mysql 포트 user: process.env.DB_USER, // mysql access 아이디 password: process.env.DB_PASSWORD, // mysql access 비밀번호 database: process.env.DB_DATABASE, // 기본 접근 database 명 connectionLimit: process.env.DB_CONNECTION_LIMIT, // 최대 생성할 수 있는 pool 개수(추후 포스팅) charset: process.env.DB_CHARSET, // 연결 케릭터셋&#125;;/** pool 에서 실행되는 모든 쿼리들의 sql 로그를 남김*/const poolEventSetup = () =&gt; &#123; global.pool.on('connection', (poolConnection) =&gt; &#123; poolConnection.on('enqueue', (sequence) =&gt; &#123; if (sequence.constructor.name === 'Query') &#123; console.log(sequence.sql); &#125; &#125;); &#125;);&#125;;/** 일반 connection 접속 체크 후 pool 생성*/const initialization = (callback) =&gt; &#123; const connectionCheck = mysql.createConnection(connectionInfo); connectionCheck.connect((err) =&gt; &#123; connectionCheck.end(); // connection 에러 발생 if (err) return callback(err); // global 할당 ex) pool.query('select * from test', (err, results) =&gt; &#123;&#125;); global.pool = mysql.createPool(connectionInfo); // 개발 환경 시 실행 query 로깅 활성화 if (process.env.NODE_ENV !== 'production') poolEventSetup(); callback(null); &#125;);&#125;;module.exports.init = initialization;app.js module load불필요 코드 생략123456789...require('db').init((err) =&gt; &#123; if (err) &#123; process.exit(); &#125; else &#123; console.log('pool 생성 완료'); &#125;&#125;);...pool 생성 시connectionLimit 값을 100으로 하고 앱을 구동시 pool connection 이 곧바로 100개가 생성이 되진 않습니다.초기엔 최소의 pool 개수를 유지하고 실제 여유분의 pool 이 없을 시 connectionLimit 개수만큼 pool connection 이 생성됩니다. (동시에 실행되는 query 가 많을 시 생성)실제로 다양한 옵션이 존재하고 mysql에 connection timeout 설정도 해주어야 진정한 pool 효과를 볼 수가 있습니다 해당 부분에 대해서 추후에 포스팅으로 다루겠습니다.]]></content>
       <categories>
         <category>Nodejs</category>
       </categories>
@@ -107,17 +107,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu docker compose 설치]]></title>
-    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
-    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu 16.04 swap 메모리 추가하기]]></title>
     <url>%2F2018%2F09%2F02%2Flinux%2Fubuntu16.04-swap-config%2F</url>
     <content type="text"><![CDATA[설정 변경 전물리적 메모리의 * 2 배 정도로 추가하면 무난하다.상황에 따라 메모리가 많다면 1~1.5 배 고려 ( 구동되는 서비스들의 상황에 맞게 줄이 거나 늘리거나 ) (참고 문서)swappiness 설정도 필요하면 하자.2GB의 swap 메모리 추가1234$ sudo fallocate -l 2G /swapfile$ sudo chmod 600 /swapfile$ sudo mkswap /swapfile$ sudo swapon /swapfileswap 할당 확인1$ free -m재 부팅시에도 자동 할당기존 파일 백업1$ sudo cp /etc/fstab /etc/fstab.bak설정 추가1$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab]]></content>
@@ -127,6 +116,17 @@
       <tags>
         <tag>linux</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu docker compose 설치]]></title>
+    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
+    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
