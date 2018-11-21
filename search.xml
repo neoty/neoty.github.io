@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[express babel 적용]]></title>
+    <title><![CDATA[express babel 적용하기]]></title>
     <url>%2F2018%2F11%2F21%2Fnodejs%2Fstart-express-babel%2F</url>
     <content type="text"><![CDATA[Babel?Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Here are the main things Babel can do for youbabeljs.iobabel은 최신 ECMA 문법을 하위 버전에 맞게 변환하여 최신 ECMA 문법을 사용할 수 있는 장점과 최신 ECMA 문법에 구애받지 않고 코드를 실행할 수 있게 해주는 도구이다.express 와 babel 사용하기sample 폴더 만들기12$ mkdir example-express-babel$ cd example-express-babelexpress init12$ express --view=ejs .$ npm install소스 위치 변경12$ mkdir src$ mv app.js bin public routes views ./src변환 대상이 되는 소스 폴더는 따로 src 폴더를 만들어서 옮긴다.babel 모듈 추가 &amp; 삭제 모듈 추가123$ npm install babel-cli --save-dev$ npm install babel-preset-env --save-dev$ npm install rimraf --save-devbuild 스크립트 추가 &amp; start command 변경package.json12345678910$ vi package.json... 생략"scripts": &#123; "start": "node ./dist/bin/www", "prebuild": "rimraf ./dist", "build": "babel src --minified --out-dir ./dist --source-maps --copy-files"&#125;,... 생략prebuild는 npm run build 실행 시 build 스크립트가 실행 전 실행되는 커맨드이다. (변환된 파일이 위치하게 될 dist 폴더를 깨끗이 삭제하는 작업)preset 설정.babelrc12345678910$ vi .babelrc&#123; "presets": [ ["env", &#123; "targets": &#123; "node": "current" &#125; &#125;] ]&#125;현재 설치된 node 버전에 맞게 변환 하도록 설정build 시작1$ npm run buildbuild 실행실행1$ npm run start추가ci/cd 시나리오로는개발 완료원격 저장소 pushhook 을 이용하여 ci 도구에서 pullci에서 build 후build 결과물을 배포서버에서 재실행]]></content>
       <categories>
