@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/21/nodejs/start-express-babel/</loc>
+        <lastmod>2018-11-21T12:44:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/</loc>
+        <lastmod>2018-11-21T11:48:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/20/nodejs/dotenv-load-enviroment-file/</loc>
         <lastmod>2018-11-20T12:07:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -98,14 +114,6 @@
     <url>
         <loc>https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/</loc>
         <lastmod>2018-11-18T04:47:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/</loc>
-        <lastmod>2018-11-17T01:15:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

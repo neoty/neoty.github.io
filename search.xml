@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[express babel 적용]]></title>
+    <url>%2F2018%2F11%2F21%2Fnodejs%2Fstart-express-babel%2F</url>
+    <content type="text"><![CDATA[Babel?Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Here are the main things Babel can do for youbabeljs.iobabel은 최신 ECMA 문법을 하위 버전에 맞게 변환하여 최신 ECMA 문법을 사용할 수 있는 장점과 최신 ECMA 문법에 구애받지 않고 코드를 실행할 수 있게 해주는 도구이다.express 와 babel 사용하기sample 폴더 만들기12$ mkdir example-express-babel$ cd example-express-babelexpress init12$ express --view=ejs .$ npm install소스 위치 변경12$ mkdir src$ mv app.js bin public routes views ./src변환 대상이 되는 소스 폴더는 따로 src 폴더를 만들어서 옮긴다.babel 모듈 추가 &amp; 삭제 모듈 추가123$ npm install babel-cli --save-dev$ npm install babel-preset-env --save-dev$ npm install rimraf --save-devbuild 스크립트 추가 &amp; start command 변경package.json12345678910$ vi package.json... 생략"scripts": &#123; "start": "node ./dist/bin/www", "prebuild": "rimraf ./dist", "build": "babel src --minified --out-dir ./dist --source-maps --copy-files"&#125;,... 생략prebuild는 npm run build 실행 시 build 스크립트가 실행 전 실행되는 커맨드이다. (변환된 파일이 위치하게 될 dist 폴더를 깨끗이 삭제하는 작업)preset 설정.babelrc12345678910$ vi .babelrc&#123; "presets": [ ["env", &#123; "targets": &#123; "node": "current" &#125; &#125;] ]&#125;현재 설치된 node 버전에 맞게 변환 하도록 설정build 시작1$ npm run buildbuild 실행실행1$ npm run start추가ci/cd 시나리오로는개발 완료원격 저장소 pushhook 을 이용하여 ci 도구에서 pullci에서 build 후build 결과물을 배포서버에서 재실행]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>babel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[dotenv 모듈을 이용하여 동적으로 enviroment 변수 정의]]></title>
     <url>%2F2018%2F11%2F20%2Fnodejs%2Fdotenv-load-enviroment-file%2F</url>
     <content type="text"><![CDATA[dotenvDotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.npmjs dotenvnodejs dotenv 모듈을 이용하여 서버마다 최소한의 설정으로 환경에 맞는 환경변수를 사용한다.(환경 변수는 소스코드에 포함시키지 않는 게 정석이나… 관리 측면이나 공개할 소스는 아니기 때문에 상황에 맞게 사용하시면 될 듯..)code실습 앱 생성1234$ mkdir example-dotenv$ cd example-dotenv$ npm init모두 enter 입력dotenv 설치1$ npm install dotenv테스트용 .env 파일 생성test.env12test1=test1내용test2=test2내용index.js 파일 생성index.js12345const dotenv = require('dotenv');require('dotenv').config(&#123; path: 'test.env' &#125;);console.log(process.env.test1);console.log(process.env.test2);index.js 실행123$ node index.jstest1 내용test2 내용활용기본 골자는 .env 파일에 있는 내용을 그대로 process.env에서 사용할 수 있도록 해준다는건데, 서버별로 기본적으로 NODE_ENV 를 정의해놓고 서버 마다 다른 환경 설정을 기술하고 서버마다 환경에 맞는 .env 파일을 로드할 수 있게끔 할 수 있다.sampleapp.js1require('dotenv').config(&#123; path: path.join(__dirname, `config/$&#123;process.env.NODE_ENV || 'development'&#125;.env`) &#125;);기본 정의되어 있는 NODE_ENV가 정의되어 있으면 해당 NODE_ENV 값에 맞는 .env 파일을 config 폴더에서 찾는 모습이다. NODE_ENV가 없으면 기본 development.env 파일을 로드주의사항What happens to environment variables that were already set?We will never modify any environment variables that have already been set. In particular, if there is a variable in your .env file which collides with one that already exists in your environment, then that variable will be skipped. This behavior allows you to override all .env configurations with a machine-specific environment, although it is not recommended.npmjs dotenvprocess.env아래에 이미 key가 정의되어있다면 dotenv 로드하여도 해당 key의 value는 overwrite 되지 않는다.(강제로 할당 하는 방법은 존재함)]]></content>

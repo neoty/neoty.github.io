@@ -31,13 +31,6 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/nvm/</loc>
-        <lastmod>2018-11-17T01:15:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/tags/pm2/</loc>
         <lastmod>2018-11-18T04:47:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,8 +101,22 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/tags/nvm/</loc>
+        <lastmod>2018-11-21T11:48:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/tags/nodejs/</loc>
-        <lastmod>2018-11-20T12:07:07.000Z</lastmod>
+        <lastmod>2018-11-21T12:44:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/tags/babel/</loc>
+        <lastmod>2018-11-21T12:44:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
