@@ -491,6 +491,33 @@
   </entry>
   
   <entry>
+    <title>NVM 글로벌 모듈 마이그레이션</title>
+    <link href="https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/"/>
+    <id>https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/</id>
+    <published>2018-04-07T15:00:00.000Z</published>
+    <updated>2018-11-21T11:48:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.<br>이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.<br>nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.</p><h4 id="설치-시-모듈-migration"><a href="#설치-시-모듈-migration" class="headerlink" title="설치 시 모듈 migration"></a>설치 시 모듈 migration</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;</span><br></pre></td></tr></table></figure><h4 id="덤으로-기본-default-LTS-버전을-변경하는-명령어"><a href="#덤으로-기본-default-LTS-버전을-변경하는-명령어" class="headerlink" title="덤으로 기본 default(LTS) 버전을 변경하는 명령어"></a>덤으로 기본 default(LTS) 버전을 변경하는 명령어</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvm <span class="built_in">alias</span> default &#123;변경버전&#125;</span><br><span class="line">$ nvm list</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.&lt;br&gt;이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.&lt;br&gt;nvm에선 n
+      
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://blog.seq.kr/categories/Nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
+    
+      <category term="nvm" scheme="https://blog.seq.kr/tags/nvm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu 16.04 Mariadb10 설치 하기 (ssh tunneling 접속)</title>
     <link href="https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/"/>
     <id>https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/</id>
@@ -516,33 +543,6 @@
       <category term="ubuntu" scheme="https://blog.seq.kr/tags/ubuntu/"/>
     
       <category term="database" scheme="https://blog.seq.kr/tags/database/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NVM 글로벌 모듈 마이그레이션</title>
-    <link href="https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/"/>
-    <id>https://blog.seq.kr/2018/04/08/nodejs/nvm-global-module-migration/</id>
-    <published>2018-04-07T15:00:00.000Z</published>
-    <updated>2018-11-21T11:48:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.<br>이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.<br>nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.</p><h4 id="설치-시-모듈-migration"><a href="#설치-시-모듈-migration" class="headerlink" title="설치 시 모듈 migration"></a>설치 시 모듈 migration</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;</span><br></pre></td></tr></table></figure><h4 id="덤으로-기본-default-LTS-버전을-변경하는-명령어"><a href="#덤으로-기본-default-LTS-버전을-변경하는-명령어" class="headerlink" title="덤으로 기본 default(LTS) 버전을 변경하는 명령어"></a>덤으로 기본 default(LTS) 버전을 변경하는 명령어</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvm <span class="built_in">alias</span> default &#123;변경버전&#125;</span><br><span class="line">$ nvm list</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.&lt;br&gt;이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.&lt;br&gt;nvm에선 n
-      
-    
-    </summary>
-    
-      <category term="Nodejs" scheme="https://blog.seq.kr/categories/Nodejs/"/>
-    
-    
-      <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
-    
-      <category term="nvm" scheme="https://blog.seq.kr/tags/nvm/"/>
     
   </entry>
   
