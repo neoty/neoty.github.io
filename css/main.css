@@ -1986,7 +1986,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7fa4ff;
+  background: #42ff66;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3083,4 +3083,7 @@ hr {
 .post-body h3 {
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 8px;
+}
+.menu .menu-item a {
+  border-radius: 0px;
 }
