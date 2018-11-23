@@ -437,33 +437,6 @@
   </entry>
   
   <entry>
-    <title>모든 이미지 컨테이너 일괄 삭제</title>
-    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
-    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
-    <published>2018-04-09T15:00:00.000Z</published>
-    <updated>2018-11-20T10:44:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h4 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
-      
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
-    
-    
-      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
-    
-      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nodejs-pm2 사용해보기</title>
     <link href="https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/"/>
     <id>https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/</id>
@@ -487,6 +460,33 @@
       <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
     
       <category term="pm2" scheme="https://blog.seq.kr/tags/pm2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>모든 이미지 컨테이너 일괄 삭제</title>
+    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
+    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
+    <published>2018-04-09T15:00:00.000Z</published>
+    <updated>2018-11-20T10:44:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h4 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
     
   </entry>
   
