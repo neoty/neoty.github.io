@@ -10,6 +10,13 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/tags/open-source/</loc>
+        <lastmod>2018-09-02T14:42:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/tags/timezone/</loc>
         <lastmod>2018-11-16T13:00:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
