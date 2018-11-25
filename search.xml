@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nginx server 감추기]]></title>
+    <url>%2F2018%2F11%2F25%2Flinux%2Fnginx-hide-server-header%2F</url>
+    <content type="text"><![CDATA[nginx 기본 설치 시 후 response 응답의 header를 보면 server 항목에 nginx 버전과 심지어 os 정보까지 출력된다.보안적인 측면에서 당연히 좋을 리가 없다. (해당 정보들을 수집하여 자동으로 웹서버 통계를 만드는 것으로 보이는데 통계를 위해 서비스를 하는 건 아니니..)ubuntu 16.04 에서 작성되었습니다.nginx 버전과 os 정보 감추기nginx.conf 설정Syntax: server_tokens on | off | build | string;Default: server_tokens on;Context: http, server, locationhttp, server, location context에 적용 가능하다. 특별한일이 없다면 http context에 적용nginx.conf1234http &#123; server_tokens off; 생략&#125;nginx 재시작12$ sudo nginx -t$ sudo service nginx reloadresponse server header 삭제nginx-extras 패키지 설치위 단계는 nginx 버전 정보와 서버 os까지는 유효하지만 웹 서버 정보(nginx) 를 감추진 못한다. 구글링 결과 컴파일 단계에서 수정하는 방법 등이 존재하지만. 좀 더 쉬운 방법을 적용하였다. nginx-extras 패키지를 설치하는 방법이다.(처음부터 nginx-extras를 설치하면 된다)패키지 설치 후 재시작123$ sudo apt-get install nginx-extras$ sudo nginx -t$ sudo service nginx reloadnginx-extras는 다양한 모듈을 더 지원하지만 성능이나 기능에 버그가 포함되어 있을 수도 있습니다. (사용에 신중을 기하세요.)nginx.conf 설정syntax: more_set_headers [-t &lt;content-type list&gt;]… [-s &lt;status-code list&gt;]… &lt;new-header&gt;…default: nocontext: http, server, location, location ifphase: output-header-filteroverwrite 방법으로 내용을 삭제한다.nginx.conf123http &#123; more_set_headers 'Server: ';&#125;nginx 재시작12$ sudo nginx -t$ sudo service nginx reload]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pm2 graceful start]]></title>
     <url>%2F2018%2F11%2F25%2Fnodejs%2Fpm2-graceful-start%2F</url>
     <content type="text"><![CDATA[graceful startSometimes you might need to wait for your application to have etablished connections with your DBs/caches/workers/whatever. PM2 needs to wait before considering your application as online. To do this, you need to provide –wait-ready to the CLI or provide wait_ready: true in a process file. This will make PM2 listen for that event. In your application you will need to add process.send(‘ready’); when you want your application to be considered as ready.pm2 graceful startnode application 구동시 일련의 과정을 거치기 마련이다 (db, memory db pool 생성이나 기타 비동기적인 initialization 작업등) 동기 작업이라면 상관없겠지만 비동기 작업 같은 경우 콜백 등으로 구현해서 모든게 준비가 되었을떄 application 을 구동(사용 단계로 격상) 시켜야 한다.pm2는 이러한 상황에 대비에 옵션으로 해당 과정을 쉽게 할 수 있게 기능을 제공한다.(원문에선 cli로 옵션을 줄수도 있지만 여기에선 ecosystem.config.js를 기준으로 설명)Samplegraceful start 활성화ecosystem.config.js12345678910111213module.exports = &#123; apps : [ &#123; "name" : 'pm2-graceful-start-exmaple', "script" : 'bin/www', "wait_ready" : true, "listen_timeout" : 5000, // ms 단위 env_production : &#123; NODE_ENV: 'production' &#125; &#125; ]&#125;;핵심 옵션은 wait_ready와 listen_timeout이다. wait_ready값이 true라면 listen_timeout동안 대기하며 해당 시간 동안 특정한 signal 을 받지 못하면 강제로 application 이 시작(노출) 되게 된다.(listen_timeout의 default값은 3000ms)application 시작 signal 보내기app.js (express template 이기 때문에 기본 코드 생략)12345678생략setTimeout(function() &#123; process.send('ready'); console.log("application published!")&#125;, 2000);module.exports = app;application 이 준비가 되었을 때 process.send(&#39;ready&#39;)코드로 pm2에 signal 을 보내면 된다. (예제는 2초 후에 앱이 구동) 비동기적인 작업등을 명시하고 모든 비동기 작업이 끝나면 콜백으로 process.send(&#39;ready&#39;)실행하여 안정적인 application 구동을 꾀할 수 있다.]]></content>
@@ -223,6 +235,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
+    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
+    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>nvm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu 16.04 Mariadb10 설치 하기 (ssh tunneling 접속)]]></title>
     <url>%2F2018%2F04%2F08%2Flinux%2Fubuntu16.04-maraidb10-install%2F</url>
     <content type="text"><![CDATA[기본 Repository에서 Mariadb10 설치12$ sudo apt-get update$ sudo apt-get install mariadb-server mariadb-client기본 설정1$ sudo mysql_secure_installationssh tunneling 접속 전ssh tunneling을 통해 원격에서 mysql에 root 유저에 접속하기 위해 설정합니다. (원래 이런게 없었던걸로 기억하는데 이 부분 때문에 한참 삽질하였습니다. mariadb10 만 그런건지… 해당 설정을 하지 않으면 ssh tunneling을 통해 원격에서 mysql 에 접속할수가 없습니다.)1234# mysql -u root -p&gt; use mysql;&gt; update user set plugin='mysql_native_password' where user='root';&gt; flush privileges;]]></content>
@@ -233,18 +257,6 @@
         <tag>linux</tag>
         <tag>ubuntu</tag>
         <tag>database</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
-    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
-    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-        <tag>nvm</tag>
       </tags>
   </entry>
 </search>

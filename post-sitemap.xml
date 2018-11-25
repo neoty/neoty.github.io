@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/25/linux/nginx-hide-server-header/</loc>
+        <lastmod>2018-11-25T11:01:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/</loc>
         <lastmod>2018-11-25T05:45:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
