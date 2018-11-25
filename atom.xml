@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.seq.kr/"/>
-  <updated>2018-11-25T11:01:11.000Z</updated>
+  <updated>2018-11-25T11:04:08.000Z</updated>
   <id>https://blog.seq.kr/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>nginx server 감추기</title>
+    <title>nginx server header 감추기</title>
     <link href="https://blog.seq.kr/2018/11/25/linux/nginx-hide-server-header/"/>
     <id>https://blog.seq.kr/2018/11/25/linux/nginx-hide-server-header/</id>
     <published>2018-11-25T09:23:00.000Z</published>
-    <updated>2018-11-25T11:01:11.000Z</updated>
+    <updated>2018-11-25T11:04:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>nginx 기본 설치 시 후 response 응답의 header를 보면 <code>server</code> 항목에 nginx 버전과 심지어 os 정보까지 출력된다.<br>보안적인 측면에서 당연히 좋을 리가 없다. (해당 정보들을 수집하여 자동으로 웹서버 통계를 만드는 것으로 보이는데 통계를 위해 서비스를 하는 건 아니니..)</p><p><strong><em>ubuntu 16.04 에서 작성되었습니다.</em></strong></p><h3 id="nginx-버전과-os-정보-감추기"><a href="#nginx-버전과-os-정보-감추기" class="headerlink" title="nginx 버전과 os 정보 감추기"></a>nginx 버전과 os 정보 감추기</h3><h4 id="nginx-conf-설정"><a href="#nginx-conf-설정" class="headerlink" title="nginx.conf 설정"></a>nginx.conf 설정</h4><blockquote><p><strong>Syntax</strong>: server_tokens on | off | build | string;<br><strong>Default</strong>: server_tokens on;<br><strong>Context</strong>: http, server, location</p></blockquote><p>http, server, location context에 적용 가능하다. 특별한일이 없다면 http context에 적용<br><figure class="highlight shell"><figcaption><span>nginx.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    server_tokens off;</span><br><span class="line">    생략</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight shell"><figcaption><span>nginx 재시작</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -t</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx reload</span></span><br></pre></td></tr></table></figure><h3 id="response-server-header-삭제"><a href="#response-server-header-삭제" class="headerlink" title="response server header 삭제"></a>response server header 삭제</h3><h4 id="nginx-extras-패키지-설치"><a href="#nginx-extras-패키지-설치" class="headerlink" title="nginx-extras 패키지 설치"></a>nginx-extras 패키지 설치</h4><p>위 단계는 nginx 버전 정보와 서버 os까지는 유효하지만 웹 서버 정보(nginx) 를 감추진 못한다. 구글링 결과 컴파일 단계에서 수정하는 방법 등이 존재하지만. 좀 더 쉬운 방법을 적용하였다. nginx-extras 패키지를 설치하는 방법이다.<br><strong>(처음부터 nginx-extras를 설치하면 된다)</strong><br><figure class="highlight shell"><figcaption><span>패키지 설치 후 재시작</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install nginx-extras</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -t</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx reload</span></span><br></pre></td></tr></table></figure></p><blockquote><p>nginx-extras는 다양한 모듈을 더 지원하지만 성능이나 기능에 버그가 포함되어 있을 수도 있습니다. (사용에 신중을 기하세요.)</p></blockquote><h4 id="nginx-conf-설정-1"><a href="#nginx-conf-설정-1" class="headerlink" title="nginx.conf 설정"></a>nginx.conf 설정</h4><blockquote><p><strong>syntax</strong>: more_set_headers [-t <code>&lt;content-type list&gt;</code>]… [-s <code>&lt;status-code list&gt;</code>]… <code>&lt;new-header&gt;</code>…<br><strong>default</strong>: no<br><strong>context</strong>: http, server, location, location if<br><strong>phase</strong>: output-header-filter</p></blockquote><p>overwrite 방법으로 내용을 삭제한다.<br><figure class="highlight shell"><figcaption><span>nginx.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    more_set_headers 'Server: ';</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight shell"><figcaption><span>nginx 재시작</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo nginx -t</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo service nginx reload</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -491,33 +491,6 @@
   </entry>
   
   <entry>
-    <title>모든 이미지 컨테이너 일괄 삭제</title>
-    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
-    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
-    <published>2018-04-09T15:00:00.000Z</published>
-    <updated>2018-11-20T10:44:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h4 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
-      
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
-    
-    
-      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
-    
-      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nodejs-pm2 사용해보기</title>
     <link href="https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/"/>
     <id>https://blog.seq.kr/2018/04/10/nodejs/nodejs-pm2-usage/</id>
@@ -541,6 +514,33 @@
       <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
     
       <category term="pm2" scheme="https://blog.seq.kr/tags/pm2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>모든 이미지 컨테이너 일괄 삭제</title>
+    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
+    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
+    <published>2018-04-09T15:00:00.000Z</published>
+    <updated>2018-11-20T10:44:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h4 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
     
   </entry>
   
