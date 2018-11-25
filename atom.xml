@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.seq.kr/"/>
-  <updated>2018-11-21T12:45:13.000Z</updated>
+  <updated>2018-11-25T05:43:26.000Z</updated>
   <id>https://blog.seq.kr/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pm2 graceful start</title>
+    <link href="https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/"/>
+    <id>https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/</id>
+    <published>2018-11-25T05:20:11.000Z</published>
+    <updated>2018-11-25T05:43:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="graceful-start"><a href="#graceful-start" class="headerlink" title="graceful start"></a>graceful start</h3><blockquote><p>Sometimes you might need to wait for your application to have etablished connections with your DBs/caches/workers/whatever. PM2 needs to wait before considering your application as online. To do this, you need to provide –wait-ready to the CLI or provide wait_ready: true in a process file. This will make PM2 listen for that event. In your application you will need to add process.send(‘ready’); when you want your application to be considered as ready.<br><strong><em><a href="http://pm2.keymetrics.io/docs/usage/signals-clean-restart/#graceful-start" target="_blank" rel="noopener">pm2 graceful start</a></em></strong></p></blockquote><p>node application 구동시 일련의 과정을 거치기 마련이다 (db, memory db pool 생성이나 기타 비동기적인 initialization 작업등) 동기 작업이라면 상관없겠지만 비동기 작업 같은 경우 콜백 등으로 구현해서 모든게 준비가 되었을떄 application 을 구동(사용 단계로 격상) 시켜야 한다.<br>pm2는 이러한 상황에 대비에 옵션으로 해당 과정을 쉽게 할 수 있게 기능을 제공한다.</p><p>원문에선 cli로 옵션을 줄수도 있지만 여기에선 ecosystem.config.js를 기준으로 설명</p><h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h4 id="graceful-start-활성화"><a href="#graceful-start-활성화" class="headerlink" title="graceful start 활성화"></a>graceful start 활성화</h4><figure class="highlight javascript"><figcaption><span>ecosystem.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  apps : [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>            : <span class="string">'pm2-graceful-start-exmaple'</span>,</span><br><span class="line">      <span class="string">"script"</span>          : <span class="string">'bin/www'</span>,</span><br><span class="line">      <span class="string">"wait_ready"</span>      : <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"listen_timeout"</span>  : <span class="number">5000</span>,             <span class="comment">// ms 단위</span></span><br><span class="line">      env_production : &#123;</span><br><span class="line">        NODE_ENV: <span class="string">'production'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>핵심 옵션은 <code>wait_ready</code>와 <code>listen_timeout</code>이다. <code>wait_ready</code>값이 true라면 <code>listen_timeout</code>동안 대기하며 해당 시간 동안 특정한 signal 을 받지 못하면 강제로 application 이 시작(노출) 되게 된다.<br>(<code>listen_timeout</code>의 default값은 3000ms)</p><h4 id="application-시작-signal-보내기"><a href="#application-시작-signal-보내기" class="headerlink" title="application 시작 signal 보내기"></a>application 시작 signal 보내기</h4><figure class="highlight javascript"><figcaption><span>app.js (express template 이기 때문에 기본 코드 생략)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">생략</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  process.send(<span class="string">'ready'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"application published!"</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app;</span><br></pre></td></tr></table></figure><p>application 이 준비가 되었을 때 <code>process.send(&#39;ready&#39;)</code>코드로 pm2에 signal 을 보내면 된다. (예제는 2초 후에 앱이 구동) 비동기적인 작업등을 명시하고 모든 비동기 작업이 끝나면 콜백으로 <code>process.send(&#39;ready&#39;)</code>실행하여 안정적인 application 구동을 꾀할 수 있다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;graceful-start&quot;&gt;&lt;a href=&quot;#graceful-start&quot; class=&quot;headerlink&quot; title=&quot;graceful start&quot;&gt;&lt;/a&gt;graceful start&lt;/h3&gt;&lt;blockquote&gt;&lt;p&gt;Sometimes 
+      
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://blog.seq.kr/categories/Nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
+    
+      <category term="pm2" scheme="https://blog.seq.kr/tags/pm2/"/>
+    
+  </entry>
   
   <entry>
     <title>express babel 적용하기</title>
@@ -487,35 +514,6 @@
       <category term="nodejs" scheme="https://blog.seq.kr/tags/nodejs/"/>
     
       <category term="pm2" scheme="https://blog.seq.kr/tags/pm2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu 16.04 Mariadb10 설치 하기 (ssh tunneling 접속)</title>
-    <link href="https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/"/>
-    <id>https://blog.seq.kr/2018/04/08/linux/ubuntu16.04-maraidb10-install/</id>
-    <published>2018-04-07T15:00:00.000Z</published>
-    <updated>2018-11-16T13:08:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h4 id="기본-Repository에서-Mariadb10-설치"><a href="#기본-Repository에서-Mariadb10-설치" class="headerlink" title="기본 Repository에서 Mariadb10 설치"></a>기본 Repository에서 Mariadb10 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure><h4 id="기본-설정"><a href="#기본-설정" class="headerlink" title="기본 설정"></a>기본 설정</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql_secure_installation</span><br></pre></td></tr></table></figure><h4 id="ssh-tunneling-접속-전"><a href="#ssh-tunneling-접속-전" class="headerlink" title="ssh tunneling 접속 전"></a>ssh tunneling 접속 전</h4><p>ssh tunneling을 통해 원격에서 mysql에 root 유저에 접속하기 위해 설정합니다. (원래 이런게 없었던걸로 기억하는데 이 부분 때문에 한참 삽질하였습니다. mariadb10 만 그런건지… 해당 설정을 하지 않으면 ssh tunneling을 통해 원격에서 mysql 에 접속할수가 없습니다.)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql -u root -p</span></span><br><span class="line">&gt; use mysql;</span><br><span class="line">&gt; update user <span class="built_in">set</span> plugin=<span class="string">'mysql_native_password'</span> <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line">&gt; flush privileges;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;&lt;h4 id=&quot;기본-Repository에서-Mariadb10-설치&quot;&gt;&lt;a href=&quot;#기본-Repository에서-Mariadb10-설치&quot; class=&quot;headerlink&quot; title=&quot;기본 Repository에서 Mariadb10 설치&quot;&gt;&lt;/
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
-    
-    
-      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
-    
-      <category term="ubuntu" scheme="https://blog.seq.kr/tags/ubuntu/"/>
-    
-      <category term="database" scheme="https://blog.seq.kr/tags/database/"/>
     
   </entry>
   

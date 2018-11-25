@@ -31,13 +31,6 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/pm2/</loc>
-        <lastmod>2018-11-18T04:47:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/tags/status/</loc>
         <lastmod>2018-11-19T12:09:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,15 +101,22 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/nodejs/</loc>
+        <loc>https://blog.seq.kr/tags/babel/</loc>
         <lastmod>2018-11-21T12:45:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/babel/</loc>
-        <lastmod>2018-11-21T12:45:13.000Z</lastmod>
+        <loc>https://blog.seq.kr/tags/nodejs/</loc>
+        <lastmod>2018-11-25T05:43:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/tags/pm2/</loc>
+        <lastmod>2018-11-25T05:43:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

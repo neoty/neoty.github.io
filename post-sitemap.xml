@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/</loc>
+        <lastmod>2018-11-25T05:43:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/21/nodejs/start-express-babel/</loc>
         <lastmod>2018-11-21T12:45:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
