@@ -39,7 +39,7 @@
   <entry>
     <title><![CDATA[dotenv 모듈을 이용하여 동적으로 enviroment 변수 정의]]></title>
     <url>%2F2018%2F11%2F20%2Fnodejs%2Fdotenv-load-enviroment-file%2F</url>
-    <content type="text"><![CDATA[dotenvDotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.npmjs dotenvnodejs dotenv 모듈을 이용하여 서버마다 최소한의 설정으로 환경에 맞는 환경변수를 사용한다.(환경 변수는 소스코드에 포함시키지 않는 게 정석이나… 관리 측면이나 공개할 소스는 아니기 때문에 상황에 맞게 사용하시면 될 듯..)code실습 앱 생성1234$ mkdir example-dotenv$ cd example-dotenv$ npm init모두 enter 입력dotenv 설치1$ npm install dotenv테스트용 .env 파일 생성test.env12test1=test1내용test2=test2내용index.js 파일 생성index.js12345const dotenv = require('dotenv');require('dotenv').config(&#123; path: 'test.env' &#125;);console.log(process.env.test1);console.log(process.env.test2);index.js 실행123$ node index.jstest1 내용test2 내용활용기본 골자는 .env 파일에 있는 내용을 그대로 process.env에서 사용할 수 있도록 해준다는건데, 서버별로 기본적으로 NODE_ENV 를 정의해놓고 서버 마다 다른 환경 설정을 기술하고 서버마다 환경에 맞는 .env 파일을 로드할 수 있게끔 할 수 있다.sampleapp.js1require('dotenv').config(&#123; path: path.join(__dirname, `config/$&#123;process.env.NODE_ENV || 'development'&#125;.env`) &#125;);기본 정의되어 있는 NODE_ENV가 정의되어 있으면 해당 NODE_ENV 값에 맞는 .env 파일을 config 폴더에서 찾는 모습이다. NODE_ENV가 없으면 기본 development.env 파일을 로드주의사항What happens to environment variables that were already set?We will never modify any environment variables that have already been set. In particular, if there is a variable in your .env file which collides with one that already exists in your environment, then that variable will be skipped. This behavior allows you to override all .env configurations with a machine-specific environment, although it is not recommended.npmjs dotenvprocess.env아래에 이미 key가 정의되어있다면 dotenv 로드하여도 해당 key의 value는 overwrite 되지 않는다.(강제로 할당 하는 방법은 존재함)]]></content>
+    <content type="text"><![CDATA[dotenvDotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.npmjs dotenvnodejs dotenv 모듈을 이용하여 서버마다 최소한의 설정으로 환경에 맞는 환경변수를 사용한다.(환경 변수는 소스코드에 포함시키지 않는 게 정석이나… 관리 측면이나 공개할 소스는 아니기 때문에 상황에 맞게 사용하시면 될 듯..)code실습 앱 생성1234$ mkdir example-dotenv$ cd example-dotenv$ npm init모두 enter 입력dotenv 설치1$ npm install dotenv테스트용 .env 파일 생성test.env12test1=test1내용test2=test2내용index.js 파일 생성index.js12345const dotenv = require('dotenv');require('dotenv').config(&#123; path: 'test.env' &#125;);console.log(process.env.test1);console.log(process.env.test2);index.js 실행123$ node index.jstest1 내용test2 내용Sample source downloadexample-dotenv활용기본 골자는 .env 파일에 있는 내용을 그대로 process.env에서 사용할 수 있도록 해준다는건데, 서버별로 기본적으로 NODE_ENV 를 정의해놓고 서버 마다 다른 환경 설정을 기술하고 서버마다 환경에 맞는 .env 파일을 로드할 수 있게끔 할 수 있다.sampleapp.js1require('dotenv').config(&#123; path: path.join(__dirname, `config/$&#123;process.env.NODE_ENV || 'development'&#125;.env`) &#125;);기본 정의되어 있는 NODE_ENV가 정의되어 있으면 해당 NODE_ENV 값에 맞는 .env 파일을 config 폴더에서 찾는 모습이다. NODE_ENV가 없으면 기본 development.env 파일을 로드주의사항What happens to environment variables that were already set?We will never modify any environment variables that have already been set. In particular, if there is a variable in your .env file which collides with one that already exists in your environment, then that variable will be skipped. This behavior allows you to override all .env configurations with a machine-specific environment, although it is not recommended.npmjs dotenvprocess.env아래에 이미 key가 정의되어있다면 dotenv 로드하여도 해당 key의 value는 overwrite 되지 않는다.(강제로 할당 하는 방법은 존재함)]]></content>
       <categories>
         <category>Nodejs</category>
       </categories>
@@ -155,17 +155,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ubuntu docker compose 설치]]></title>
-    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
-    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ubuntu 16.04 swap 메모리 추가하기]]></title>
     <url>%2F2018%2F09%2F02%2Flinux%2Fubuntu16.04-swap-config%2F</url>
     <content type="text"><![CDATA[설정 변경 전물리적 메모리의 * 2 배 정도로 추가하면 무난하다.상황에 따라 메모리가 많다면 1~1.5 배 고려 ( 구동되는 서비스들의 상황에 맞게 줄이 거나 늘리거나 ) (참고 문서)swappiness 설정도 필요하면 하자.2GB의 swap 메모리 추가1234$ sudo fallocate -l 2G /swapfile$ sudo chmod 600 /swapfile$ sudo mkswap /swapfile$ sudo swapon /swapfileswap 할당 확인1$ free -m재 부팅시에도 자동 할당기존 파일 백업1$ sudo cp /etc/fstab /etc/fstab.bak설정 추가1$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab]]></content>
@@ -175,6 +164,17 @@
       <tags>
         <tag>linux</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu docker compose 설치]]></title>
+    <url>%2F2018%2F09%2F02%2Fdocker%2Fcompose-install-ubuntu%2F</url>
+    <content type="text"><![CDATA[아래 방법은 공식사이트에서 가져온 내용입니다.개인적으로 root 설치하기를 권장합니다.docker install linkdocker-compose install linkdocker 설치1234567891011121314151617181920$ sudo apt-get update $ sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ software-properties-common $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - $ sudo apt-key fingerprint 0EBFCD88 $ sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" $ sudo apt-get update $ sudo apt-get install docker-cedocker 설치 테스트12345678$ sudo docker run hello-world$ sudo docker ps -a실행 확인$ sudo docker rm &#123;위에서 확인한 CONTAINER ID&#125;$ sudo docker rmi hello-worlddocker compose 설치12345$ sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose$ sudo chmod +x /usr/local/bin/docker-compose$ sudo docker-compose --version]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -212,18 +212,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Nodejs-pm2 사용해보기]]></title>
-    <url>%2F2018%2F04%2F10%2Fnodejs%2Fnodejs-pm2-usage%2F</url>
-    <content type="text"><![CDATA[노드 앱을 구동하기 위해서 다양한 도구들을 사용하지만 저는 pm2를 사용합니다. 개발뿐만 아니라 실제 production에서도 사용하기 좋은 툴입니다. 매우 다양한 옵션도 지원하구요!pm2를 사용하여 쉽게 앱 관리&amp;watch&amp;클러스터 모드등을 사용할수 있습니다.설치pm2 global 로 설치1$ npm install pm2 -gpm2정상 설치 확인1$ pm2 -v사용법기본 express 템플릿 생성1234$ mkdir test$ cd test$ express --view=ejs$ npm installpm2 이용하여 앱 구동1$ pm2 start bin/www --name=pm2-testmonit 명령어1$ pm2 monit위 방법은 아주 간단히 pm2를 이용하여 프로젝트를 구동한 모습입니다. 그럼 ecosystem이란것을 이용하여 좀더 간단히 그리고 옵션도 주어서 구동시켜봅니다.ecosystem 템플릿 사용ecosystem.config.js 생성1$ pm2 ecosystem내용 삭제 후 아래 내용으로 교체1$ vi ecosystem.config.jsecosystem.config.js123456789101112131415module.exports = &#123;apps : &#123; name : 'pm2-test', script : 'bin/www', watch : true, ignore_watch : ["logs"], exec_mode : "cluster", instances : 0, merge_logs : true, log_date_format : "YY-MM-DD HH:mm:ss", error_file : "./logs/err.log", out_file : "./logs/out.log" &#125;&#125;;이 포스트에 모든 옵션을 넣기엔 약간 무리가 있어보입니다. 위에 적힌 옵션들만 보자면name : pm2 에서 관리하는 이름입니다.script : 앱을 구동할 경로 입니다. 보통 app.js 나 express 로 만드셨다면 bin/www 가 되겠지요watch : 파일이 변경되면 자동으로 재시작 하겠다는 의미입니다. 개발시에 유용합니다.ignore_watch : 배열안에 있는 리스트는 watch 대상에서 무시하겠다는 의미입니다. 로그파일이나 데이터 폴더등의 경로 혹은 이름이 될것입니다.exec_mode : 클러스터 모드로 구동합니다instances : 클러스터로 구동될시 몇개까지 구동할것인지 선택합니다.(0 : cpu갯수)merge_logs : 클러스터로 구동할시 로그를 한파일에 기록합니다.log_date_format : 로그에 출력될 날짜와 시간값의 형식입니다.error_file : 에러 파일 위치out_file : 기본 출력 로그 위치공식 메뉴얼 : http://pm2.keymetrics.io/docs/usage/application-declaration/ecosystem 사용기존 pm2-test 삭제1$ pm2 delete pm2-testecosystem.config.js로 시작1$ pm2 start ecosystem.config.js구동 확인1$ pm2 list네트워크 환경에서의 watch 사용vagrant같은 가상환경을 사용할시 pm2 에서 watch 옵션을 주고 파일 내용을 변경해도 자동시작이 되지 않을수 있습니다.(네트워크 마운트일 때) 그럴 경우 아래와 같은 옵션을 추가 시켜주세요.watch_options : {&quot;usePolling&quot;: true, &quot;interval&quot;:2000, &quot;binaryInterval&quot;:2000}제사한 내용은 아래 문서 참고https://github.com/paulmillr/chokidar#api]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-        <tag>pm2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[모든 이미지 컨테이너 일괄 삭제]]></title>
     <url>%2F2018%2F04%2F10%2Fdocker%2Fcontainer-image-remove%2F</url>
     <content type="text"><![CDATA[모든 컨테이너 삭제1docker rm $(docker ps -a -q)모든 이미지 삭제1docker rmi $(docker images -q)]]></content>
@@ -236,15 +224,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
-    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
-    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
+    <title><![CDATA[Nodejs-pm2 사용해보기]]></title>
+    <url>%2F2018%2F04%2F10%2Fnodejs%2Fnodejs-pm2-usage%2F</url>
+    <content type="text"><![CDATA[노드 앱을 구동하기 위해서 다양한 도구들을 사용하지만 저는 pm2를 사용합니다. 개발뿐만 아니라 실제 production에서도 사용하기 좋은 툴입니다. 매우 다양한 옵션도 지원하구요!pm2를 사용하여 쉽게 앱 관리&amp;watch&amp;클러스터 모드등을 사용할수 있습니다.설치pm2 global 로 설치1$ npm install pm2 -gpm2정상 설치 확인1$ pm2 -v사용법기본 express 템플릿 생성1234$ mkdir test$ cd test$ express --view=ejs$ npm installpm2 이용하여 앱 구동1$ pm2 start bin/www --name=pm2-testmonit 명령어1$ pm2 monit위 방법은 아주 간단히 pm2를 이용하여 프로젝트를 구동한 모습입니다. 그럼 ecosystem이란것을 이용하여 좀더 간단히 그리고 옵션도 주어서 구동시켜봅니다.ecosystem 템플릿 사용ecosystem.config.js 생성1$ pm2 ecosystem내용 삭제 후 아래 내용으로 교체1$ vi ecosystem.config.jsecosystem.config.js123456789101112131415module.exports = &#123;apps : &#123; name : 'pm2-test', script : 'bin/www', watch : true, ignore_watch : ["logs"], exec_mode : "cluster", instances : 0, merge_logs : true, log_date_format : "YY-MM-DD HH:mm:ss", error_file : "./logs/err.log", out_file : "./logs/out.log" &#125;&#125;;이 포스트에 모든 옵션을 넣기엔 약간 무리가 있어보입니다. 위에 적힌 옵션들만 보자면name : pm2 에서 관리하는 이름입니다.script : 앱을 구동할 경로 입니다. 보통 app.js 나 express 로 만드셨다면 bin/www 가 되겠지요watch : 파일이 변경되면 자동으로 재시작 하겠다는 의미입니다. 개발시에 유용합니다.ignore_watch : 배열안에 있는 리스트는 watch 대상에서 무시하겠다는 의미입니다. 로그파일이나 데이터 폴더등의 경로 혹은 이름이 될것입니다.exec_mode : 클러스터 모드로 구동합니다instances : 클러스터로 구동될시 몇개까지 구동할것인지 선택합니다.(0 : cpu갯수)merge_logs : 클러스터로 구동할시 로그를 한파일에 기록합니다.log_date_format : 로그에 출력될 날짜와 시간값의 형식입니다.error_file : 에러 파일 위치out_file : 기본 출력 로그 위치공식 메뉴얼 : http://pm2.keymetrics.io/docs/usage/application-declaration/ecosystem 사용기존 pm2-test 삭제1$ pm2 delete pm2-testecosystem.config.js로 시작1$ pm2 start ecosystem.config.js구동 확인1$ pm2 list네트워크 환경에서의 watch 사용vagrant같은 가상환경을 사용할시 pm2 에서 watch 옵션을 주고 파일 내용을 변경해도 자동시작이 되지 않을수 있습니다.(네트워크 마운트일 때) 그럴 경우 아래와 같은 옵션을 추가 시켜주세요.watch_options : {&quot;usePolling&quot;: true, &quot;interval&quot;:2000, &quot;binaryInterval&quot;:2000}제사한 내용은 아래 문서 참고https://github.com/paulmillr/chokidar#api]]></content>
       <categories>
         <category>Nodejs</category>
       </categories>
       <tags>
         <tag>nodejs</tag>
-        <tag>nvm</tag>
+        <tag>pm2</tag>
       </tags>
   </entry>
   <entry>
@@ -258,6 +246,18 @@
         <tag>linux</tag>
         <tag>ubuntu</tag>
         <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NVM 글로벌 모듈 마이그레이션]]></title>
+    <url>%2F2018%2F04%2F08%2Fnodejs%2Fnvm-global-module-migration%2F</url>
+    <content type="text"><![CDATA[nvm으로 node의 버전을 관리할 때 LTS 버전을 올리거나 다른 버전으로 업데이트나 변경해야 될 떄가 있습니다.이때 기존의 global로 설치했던 모듈들은 버전을 변경한다고 자동으로 migration 되지 않습니다.nvm에선 node를 설치시 기존에 사용하던 global 모듈을 migration 해주는 명령어가 존재합니다.설치 시 모듈 migration1$ nvm install &#123;다운받을 버전&#125; --reinstall-packages-from=&#123;기존에 사용하던 버전&#125;덤으로 기본 default(LTS) 버전을 변경하는 명령어12$ nvm alias default &#123;변경버전&#125;$ nvm list]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>nvm</tag>
       </tags>
   </entry>
 </search>

@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/20/nodejs/dotenv-load-enviroment-file/</loc>
+        <lastmod>2018-11-26T12:20:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/09/02/docker/compose-install-ubuntu/</loc>
         <lastmod>2018-11-25T11:47:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -82,14 +90,6 @@
     <url>
         <loc>https://blog.seq.kr/2018/05/19/nodejs/node-version-manager-usage/</loc>
         <lastmod>2018-11-25T11:40:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/20/nodejs/dotenv-load-enviroment-file/</loc>
-        <lastmod>2018-11-25T11:39:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

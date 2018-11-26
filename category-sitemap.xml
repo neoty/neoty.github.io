@@ -36,15 +36,15 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/categories/Nodejs/</loc>
-        <lastmod>2018-11-25T11:43:04.000Z</lastmod>
+        <loc>https://blog.seq.kr/categories/Docker/</loc>
+        <lastmod>2018-11-25T11:47:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/categories/Docker/</loc>
-        <lastmod>2018-11-25T11:47:22.000Z</lastmod>
+        <loc>https://blog.seq.kr/categories/Nodejs/</loc>
+        <lastmod>2018-11-26T12:20:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
