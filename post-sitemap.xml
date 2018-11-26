@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/</loc>
+        <lastmod>2018-11-26T12:39:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.seq.kr/2018/11/21/nodejs/start-express-babel/</loc>
         <lastmod>2018-11-26T12:30:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,14 +66,6 @@
     <url>
         <loc>https://blog.seq.kr/2018/11/10/docker/pull-image-deploy/</loc>
         <lastmod>2018-11-25T11:45:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/2018/11/25/nodejs/pm2-graceful-start/</loc>
-        <lastmod>2018-11-25T11:42:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
