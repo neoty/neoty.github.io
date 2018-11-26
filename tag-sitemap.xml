@@ -94,13 +94,6 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/babel/</loc>
-        <lastmod>2018-11-25T11:43:04.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/tags/docker-compose/</loc>
         <lastmod>2018-11-25T11:45:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -130,7 +123,14 @@
 
     <url>
         <loc>https://blog.seq.kr/tags/nodejs/</loc>
-        <lastmod>2018-11-26T12:20:46.000Z</lastmod>
+        <lastmod>2018-11-26T12:30:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/tags/babel/</loc>
+        <lastmod>2018-11-26T12:30:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
