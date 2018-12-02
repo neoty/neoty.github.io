@@ -66,13 +66,6 @@
     </url>
 
     <url>
-        <loc>https://blog.seq.kr/tags/ubuntu/</loc>
-        <lastmod>2018-11-25T11:38:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.seq.kr/tags/nvm/</loc>
         <lastmod>2018-11-25T11:40:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -89,13 +82,6 @@
     <url>
         <loc>https://blog.seq.kr/tags/docker-compose/</loc>
         <lastmod>2018-11-25T11:45:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.seq.kr/tags/linux/</loc>
-        <lastmod>2018-11-25T11:46:49.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -131,6 +117,20 @@
     <url>
         <loc>https://blog.seq.kr/tags/pm2/</loc>
         <lastmod>2018-11-26T12:39:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/tags/linux/</loc>
+        <lastmod>2018-12-02T05:07:20.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.seq.kr/tags/ubuntu/</loc>
+        <lastmod>2018-12-02T05:07:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.seq.kr/"/>
-  <updated>2018-11-25T11:33:34.000Z</updated>
+  <updated>2018-12-02T05:07:20.000Z</updated>
   <id>https://blog.seq.kr/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu 18.04 hostname 변경</title>
+    <link href="https://blog.seq.kr/2018/12/02/linux/ubuntu18.04-hostnamectl/"/>
+    <id>https://blog.seq.kr/2018/12/02/linux/ubuntu18.04-hostnamectl/</id>
+    <published>2018-12-01T15:00:00.000Z</published>
+    <updated>2018-12-02T05:07:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note simple info"><p><a href="http://manpages.ubuntu.com/manpages/bionic/man1/hostnamectl.1.html" target="_blank" rel="noopener">Ubuntu 18.04 hostnamectl</a></p></div><h4 id="현재-hostname-확인"><a href="#현재-hostname-확인" class="headerlink" title="현재 hostname 확인"></a>현재 hostname 확인</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line">...</span><br><span class="line">Static hostname: &#123;초기 hostname&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure><h4 id="hostname-변경"><a href="#hostname-변경" class="headerlink" title="hostname 변경"></a>hostname 변경</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo hostnamectl <span class="built_in">set</span>-hostname &#123;변경할 hostname&#125;</span></span><br></pre></td></tr></table></figure><div class="note simple danger"><p>변경된 hostname을 확인하기 위해 현재 로그인된 세션을 종료 시킨 후 재 접속한다.</p></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;note simple info&quot;&gt;&lt;p&gt;&lt;a href=&quot;http://manpages.ubuntu.com/manpages/bionic/man1/hostnamectl.1.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.seq.kr/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://blog.seq.kr/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx server header 감추기</title>
@@ -489,33 +516,6 @@
     
     
       <category term="Javascript" scheme="https://blog.seq.kr/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>모든 이미지 컨테이너 일괄 삭제</title>
-    <link href="https://blog.seq.kr/2018/04/10/docker/container-image-remove/"/>
-    <id>https://blog.seq.kr/2018/04/10/docker/container-image-remove/</id>
-    <published>2018-04-09T15:00:00.000Z</published>
-    <updated>2018-11-25T11:46:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="모든-컨테이너-삭제"><a href="#모든-컨테이너-삭제" class="headerlink" title="모든 컨테이너 삭제"></a>모든 컨테이너 삭제</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure><h3 id="모든-이미지-삭제"><a href="#모든-이미지-삭제" class="headerlink" title="모든 이미지 삭제"></a>모든 이미지 삭제</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;모든-컨테이너-삭제&quot;&gt;&lt;a href=&quot;#모든-컨테이너-삭제&quot; class=&quot;headerlink&quot; title=&quot;모든 컨테이너 삭제&quot;&gt;&lt;/a&gt;모든 컨테이너 삭제&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
-      
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://blog.seq.kr/categories/Docker/"/>
-    
-    
-      <category term="linux" scheme="https://blog.seq.kr/tags/linux/"/>
-    
-      <category term="chmod" scheme="https://blog.seq.kr/tags/chmod/"/>
     
   </entry>
   
